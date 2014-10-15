@@ -225,3 +225,5 @@ fi
 
 ## Define any user-specific variables you want here.
 source ~/.bashrc_custom
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

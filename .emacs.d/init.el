@@ -22,11 +22,23 @@
 (package-initialize)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-;; flx-ido mode 
-(ido-mode t)
-(ido-everywhere 1)
-(flx-ido-mode 1)
-(setq ido-use-face nil)
+;; auto-complete : package-install -> auto-complete
+(require 'auto-complete-config)
+(ac-config-default)
+
+;; package-install -> expand-region
+(require 'expand-region)
+
+;; package-install -> projectile
+(require 'projectile)
+
+;; package-install -> helm-projectile
+(require 'helm-projectile)
+
+;; package-install -> undo-tree
+(require 'undo-tree)
+(global-undo-tree-mode 1)
+
 
 (menu-bar-mode -1)
 (normal-erase-is-backspace-mode 0)
@@ -38,6 +50,38 @@
 (setq show-trailing-whitespace t)
 (setq suggest-key-bindings t)
 (setq vc-follow-symlinks t)
+
+;; flx-ido mode   package-install -> flx-ido
+(ido-mode t)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+(setq ido-use-face nil)
+
+;; projectile
+(projectile-global-mode)
+
+;; --------------------------
+;; -- indentation settings --
+;; --------------------------
+(electric-indent-mode 1)
+
+;;; Indentation for python
+
+;; Ignoring electric indentation
+(defun electric-indent-ignore-python (char)
+  "Ignore electric indentation for python-mode"
+  (if (equal major-mode 'python-mode)
+      `no-indent'
+    nil))
+(add-hook 'electric-indent-functions 'electric-indent-ignore-python)
+
+;; Enter key executes newline-and-indent
+(defun set-newline-and-indent ()
+  "Map the return key with `newline-and-indent'"
+  (local-set-key (kbd "RET") 'newline-and-indent))
+(add-hook 'python-mode-hook 'set-newline-and-indent)
+
+
 
 
 
@@ -67,8 +111,7 @@
   (set-face-foreground 'font-lock-comment-face "red"))
 
 
-
-
+;; package-install -> color-theme-sanityinc-tomorrow
 (when (window-system)
   (custom-set-variables
    ;; custom-set-variables was added by Custom.
@@ -93,8 +136,6 @@
 
 
 
-
-
 ;; ------------
 ;; -- Macros --
 ;; ------------
@@ -113,15 +154,34 @@
 (global-set-key "\M-h" 'backward-delete-word)
 (global-set-key "\M-u" 'zap-to-char)
 
+(global-set-key (kbd "C-=") 'er/expand-region) 
+(global-set-key (kbd "C-;") 'iedit-mode)
+(global-set-key (kbd "C-c SPC") 'ace-jump-mode)  ;; package-install -> ace-jump-mode
+(global-set-key (kbd "M-l") 'select-current-line) ;; defined in defun-config.el
+(global-set-key (kbd "C-S-y") 'duplicate-current-line-or-region) ;; defined in defun-config.el
+
 ;; ---------------------------
 ;; -- JS Mode configuration --
 ;; ---------------------------
 (load "js-config.el")
 (add-to-list 'load-path "~/.emacs.d/jade-mode") ;; github.com/brianc/jade-mode
 (require 'sws-mode)
-(require 'jade-mode)    
+(require 'jade-mode)
+(require 'js2-mode) ;; package-install -> js2-mode
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)) 
+
+
+(defun beautify-json ()
+  (interactive)
+  (let ((b (if mark-active (min (point) (mark)) (point-min)))
+        (e (if mark-active (max (point) (mark)) (point-max))))
+    (shell-command-on-region b e
+     "python -mjson.tool" (current-buffer) t)))
+
+
 
 
 ;; -------------------------------

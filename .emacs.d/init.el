@@ -17,27 +17,26 @@
 (require 'dired-x)
 (require 'compile)
 
-;; melpa packages
-(require 'package)
-(package-initialize)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-;; auto-complete : package-install -> auto-complete
-(require 'auto-complete-config)
+(require 'package) ;; melpa packages
+(package-initialize)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+
+
+(require 'auto-complete-config) ;; auto-complete : package-install -> auto-complete
 (ac-config-default)
 
-;; package-install -> expand-region
-(require 'expand-region)
+(require 'expand-region) ;; package-install -> expand-region
 
-;; package-install -> projectile
-(require 'projectile)
+(require 'projectile) ;; package-install -> projectile
+(require 'helm-projectile) ;; package-install -> helm-projectile
 
-;; package-install -> helm-projectile
-(require 'helm-projectile)
-
-;; package-install -> undo-tree
-(require 'undo-tree)
+(require 'undo-tree) ;; package-install -> undo-tree
 (global-undo-tree-mode 1)
+
+(require 'scss-mode) ;; package-install -> scss-mode
+
+(require 'multiple-cursors) ;; package-install -> multiple-cursors
 
 
 (menu-bar-mode -1)
@@ -75,12 +74,27 @@
     nil))
 (add-hook 'electric-indent-functions 'electric-indent-ignore-python)
 
+
+
 ;; Enter key executes newline-and-indent
 (defun set-newline-and-indent ()
   "Map the return key with `newline-and-indent'"
   (local-set-key (kbd "RET") 'newline-and-indent))
 (add-hook 'python-mode-hook 'set-newline-and-indent)
 
+
+
+
+
+;; ----------------------------
+;; -- unicode configurations --
+;; ----------------------------
+(prefer-coding-system       'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
+(setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
 
 
@@ -108,7 +122,13 @@
    '(show-paren-match ((((class color) (background light)) (:background "black"))) t)
    '(vertical-border ((t nil))))
 
-  (set-face-foreground 'font-lock-comment-face "red"))
+  (set-face-foreground 'font-lock-comment-face "red")
+  (global-set-key (kbd "C-c =") 'er/expand-region)
+  (global-set-key (kbd "C-c i") 'iedit-mode)
+  (global-set-key (kbd "C-c y") 'duplicate-current-line-or-region)
+  (global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-c <") 'mc/mark-previous-like-this) )
+
 
 
 ;; package-install -> color-theme-sanityinc-tomorrow
@@ -160,6 +180,14 @@
 (global-set-key (kbd "M-l") 'select-current-line) ;; defined in defun-config.el
 (global-set-key (kbd "C-S-y") 'duplicate-current-line-or-region) ;; defined in defun-config.el
 
+;; multiple-cursors
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+
+
 ;; ---------------------------
 ;; -- JS Mode configuration --
 ;; ---------------------------
@@ -201,3 +229,21 @@
    "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
 
 
+;; -----------------------------
+;; -- HTML Mode configuration --
+;; -----------------------------
+(add-hook 'html-mode-hook
+  (lambda ()
+    ;; Default indentation is usually 2 spaces, changing to 4.
+    (set (make-local-variable 'sgml-basic-offset) 4)))
+
+
+
+
+;; -----------------------------
+;; -- SCSS Mode configuration --
+;; -----------------------------
+(defun configure-auto-complete-for-scss ()
+  (add-to-list 'ac-sources 'ac-source-css-property))
+(add-hook 'scss-mode-hook 'configure-auto-complete-for-scss)
+(add-to-list 'ac-modes 'scss-mode)

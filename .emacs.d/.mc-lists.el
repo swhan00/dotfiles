@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
 	delete-word
+	indent-for-tab-command
 	select-current-line
 	))
 

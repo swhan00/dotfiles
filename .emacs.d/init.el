@@ -4,7 +4,7 @@
 ;; ---------------------
 ;; -- Global Settings --
 ;; ---------------------
-(add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/lisp")
 (require 'cl)
 (require 'ido)
 (require 'ffap)
@@ -58,6 +58,16 @@
 
 ;; projectile
 (projectile-global-mode)
+
+
+;; Switch option and command in mac
+(when (eq system-type 'darwin) ;; mac specific settings
+  (setq mac-option-modifier 'super)
+  (setq mac-command-modifier 'meta)
+  (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
+  )
+
+
 
 ;; --------------------------
 ;; -- indentation settings --
@@ -147,7 +157,7 @@
    '(vc-annotate-color-map (quote ((20 . "#f2777a") (40 . "#f99157") (60 . "#ffcc66") (80 . "#99cc99") (100 . "#66cccc") (120 . "#6699cc") (140 . "#cc99cc") (160 . "#f2777a") (180 . "#f99157") (200 . "#ffcc66") (220 . "#99cc99") (240 . "#66cccc") (260 . "#6699cc") (280 . "#cc99cc") (300 . "#f2777a") (320 . "#f99157") (340 . "#ffcc66") (360 . "#99cc99"))))
    '(vc-annotate-very-old-color nil))
   (show-paren-mode t)
-  (set-frame-font "DejaVu Sans Mono-10")
+  (set-frame-font "DejaVu Sans Mono-15")
   (scroll-bar-mode -1)
   (tool-bar-mode -1))
 

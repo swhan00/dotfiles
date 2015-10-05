@@ -1,0 +1,34 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/" . ".DocumentRevisions-V100/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/sangwoo/dotfiles/"
+ "/etc/"
+ "/Users/sangwoo/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ ".bashrc"
+ "bashrc"
+ ".zshrc"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/sangwoo/dotfiles/" (22034 4253 0 0) "README.md" ".zshrc~" ".zshrc" ".screenrc" ".gitignore" ".git/" ".emacs.d/" ".DS_Store" ".bashrc_custom" ".bashrc" ".bash_profile" ".#.zshrc" "../" "./")
+
+ ("/Users/" (22029 13437 0 0) "Shared/" "sangwoo/" ".localized" "../" "./")
+
+ ("/Users/sangwoo/" (22034 4339 0 0) "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Downloads/" "dotfiles/" "Documents/" "Desktop/" "Applications/" ".zshrc" ".Xauthority" ".viminfo" ".Trash/" ".ssh/" ".screenrc" ".rnd" ".lesshst" ".gitconfig" ".emacs.d/" ".DS_Store" ".cups/" ".CFUserTextEncoding" ".cache/" ".bash_history" ".bash_eternal_history" ".#.bashrc" "#.zshrc#" "#.bashrc#" "../" "./")
+
+ ("/etc/" (22033 22786 0 0) "zshenv" "xtab" "ttys" "syslog.conf" "sudoers" "sudo_lecture" "sshd_config" "ssh_config" "snmp/" "shells" "services" "security/" "rtadvd.conf" "rpc" "rmtab" "resolv.conf" "rc.netboot" "rc.imaging" "rc.common" "racoon/" "protocols" "profile" "ppp/" "postfix/" "php.ini.default" "php-fpm.conf.default" "pf.os" "pf.conf" "pf.anchors/" "periodic/" "paths.d/" "paths" "passwd" "pam.d/" "openldap/" "ntp_opendirectory.conf" "ntp.conf" "ntp-restrict.conf" "notify.conf" "nfs.conf" "newsyslog.d/" "newsyslog.conf" "networks" "nanorc" "moduli" "master.passwd" "manpaths.d/" "manpaths" "man.conf" "mail.rc" "mach_init_per_user.d/" "mach_init_per_login_session.d/" "mach_init.d/" "locate.rc" "localtime" "krb5.keytab" "kern_loader.conf" "irbrc" "hosts.equiv" "hosts" "group" "gettytab" "ftpusers" "ftpd.conf.default" "ftpd.conf" "fstab.hd" "find.codes" "emond.d/" "efax.rc" "dnsextd.conf" "defaults/" "cups/" "csh.logout" "csh.login" "csh.cshrc" "com.apple.screensharing.agent.launchd" "bashrc" "autofs.conf" "auto_master" "auto_home" "asl.conf" "asl/" "apache2/" "aliases.db" "aliases" "afpovertcp.cfg" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

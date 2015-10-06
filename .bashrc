@@ -83,31 +83,31 @@ fi
 if [ "$PS1" ]; then
 
     if [ -x /usr/bin/tput ]; then
-      if [ "x`tput kbs`" != "x" ]; then # We can't do this with "dumb" terminal
-        stty erase `tput kbs`
-      elif [ -x /usr/bin/wc ]; then
-        if [ "`tput kbs|wc -c `" -gt 0 ]; then # We can't do this with "dumb" terminal
-          stty erase `tput kbs`
-        fi
-      fi
+	if [ "x`tput kbs`" != "x" ]; then # We can't do this with "dumb" terminal
+            stty erase `tput kbs`
+	elif [ -x /usr/bin/wc ]; then
+            if [ "`tput kbs|wc -c `" -gt 0 ]; then # We can't do this with "dumb" terminal
+		stty erase `tput kbs`
+            fi
+	fi
     fi
     case $TERM in
 	xterm*)
-		if [ -e /etc/sysconfig/bash-prompt-xterm ]; then
-			PROMPT_COMMAND=/etc/sysconfig/bash-prompt-xterm
-		else
+	    if [ -e /etc/sysconfig/bash-prompt-xterm ]; then
+		PROMPT_COMMAND=/etc/sysconfig/bash-prompt-xterm
+	    else
 	    	PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
-		fi
-		;;
+	    fi
+	    ;;
 	screen)
-		if [ -e /etc/sysconfig/bash-prompt-screen ]; then
-			PROMPT_COMMAND=/etc/sysconfig/bash-prompt-screen
-		else
+	    if [ -e /etc/sysconfig/bash-prompt-screen ]; then
+		PROMPT_COMMAND=/etc/sysconfig/bash-prompt-screen
+	    else
 		PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\033\\"'
-		fi
-		;;
+	    fi
+	    ;;
 	*)
-		[ -e /etc/sysconfig/bash-prompt-default ] && PROMPT_COMMAND=/etc/sysconfig/bash-prompt-default
+	    [ -e /etc/sysconfig/bash-prompt-default ] && PROMPT_COMMAND=/etc/sysconfig/bash-prompt-default
 
 	    ;;
     esac
@@ -206,32 +206,32 @@ export LC_ALL=POSIX
 
 # 2.6) Install rlwrap if not present
 # http://stackoverflow.com/a/677212
-command -v rlwrap >/dev/null 2>&1 || { echo >&2 "Install rlwrap to use node: sudo apt-get install -y rlwrap";}
+#command -v rlwrap >/dev/null 2>&1 || { echo >&2 "Install rlwrap to use node: sudo apt-get install -y rlwrap";}
 
 # 2.7) node.js and nvm
 # http://nodejs.org/api/repl.html#repl_repl
-alias node="env NODE_NO_READLINE=1 rlwrap node"
-alias node_repl="node -e \"require('repl').start({ignoreUndefined: true})\""
-export NODE_DISABLE_COLORS=1
-if [ -s ~/.nvm/nvm.sh ]; then
-    NVM_DIR=~/.nvm
-    source ~/.nvm/nvm.sh
-    nvm use v0.10.12 &> /dev/null # silence nvm use; needed for rsync
-fi
+# alias node="env NODE_NO_READLINE=1 rlwrap node"
+# alias node_repl="node -e \"require('repl').start({ignoreUndefined: true})\""
+# export NODE_DISABLE_COLORS=1
+# if [ -s ~/.nvm/nvm.sh ]; then
+#     NVM_DIR=~/.nvm
+#     source ~/.nvm/nvm.sh
+#     nvm use v0.10.12 &> /dev/null # silence nvm use; needed for rsync
+# fi
 
-## ------------------------------
-## -- 3) User-customized code  --
-## ------------------------------
+# ## ------------------------------
+# ## -- 3) User-customized code  --
+# ## ------------------------------
 
-## Define any user-specific variables you want here.
-source ~/.bashrc_custom
+# ## Define any user-specific variables you want here.
+# source ~/.bashrc_custom
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 
-## for GPU computing
-export PATH=/usr/local/cuda-6.5/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-6.5/lib64:$LD_LIBRARY_PATH
+# ## for GPU computing
+# export PATH=/usr/local/cuda-6.5/bin:$PATH
+# export LD_LIBRARY_PATH=/usr/local/cuda-6.5/lib64:$LD_LIBRARY_PATH
 
-PATH=${CUDA_HOME}/bin:${PATH}
-export PATH
+# PATH=${CUDA_HOME}/bin:${PATH}
+# export PATH

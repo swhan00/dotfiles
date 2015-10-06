@@ -19,24 +19,26 @@
 
 
 (require 'package) ;; melpa packages
-(package-initialize)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-
+(package-initialize)
 
 (require 'auto-complete-config) ;; auto-complete : package-install -> auto-complete
 (ac-config-default)
 
 (require 'expand-region) ;; package-install -> expand-region
-
 (require 'projectile) ;; package-install -> projectile
 (require 'helm-projectile) ;; package-install -> helm-projectile
 
 (require 'undo-tree) ;; package-install -> undo-tree
 (global-undo-tree-mode 1)
 
+(require 'emmet-mode) ;; package-install -> emmet-mode
 (require 'scss-mode) ;; package-install -> scss-mode
-
 (require 'multiple-cursors) ;; package-install -> multiple-cursors
+(require 'web-mode) ;; package-install -> web-mode
+(require 'multi-web-mode) ;; package-install -> multi-web-mode
+
+
 
 
 (menu-bar-mode -1)
@@ -208,7 +210,6 @@
 (require 'js2-mode) ;; package-install -> js2-mode
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
-
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)) 
 
 
@@ -257,3 +258,43 @@
   (add-to-list 'ac-sources 'ac-source-css-property))
 (add-hook 'scss-mode-hook 'configure-auto-complete-for-scss)
 (add-to-list 'ac-modes 'scss-mode)
+
+
+
+;; hook emmet mode in sgml and css
+
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+(add-hook 'scss-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+
+
+
+;; -----------------------------
+;; -- Web Mode configuration --
+;; -----------------------------
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+
+
+(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+(defadvice web-mode-highlight-part (around tweak-jsx activate)
+  (if (equal web-mode-content-type "jsx")
+      (let ((web-mode-enable-part-face nil))
+        ad-do-it)
+    ad-do-it))
+
+
+(setq mweb-default-major-mode 'sgml-mode)
+(setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
+                  (js2-mode "<script +\\(type=\"text/javascript\"\\|language=\"javascript\"\\)[^>]*>" "</script>")
+		  (js2-mode "<script>" "</script>")
+		  (web-mode "<script +\\(type=\"text/jsx\"\\|language=\"javascript\"\\)[^>]*>" "</script>")
+                  (scss-mode "<style +type=\"text/css\"[^>]*>" "</style>")
+		  (scss-mode "<style>" "</style>")))
+(setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
+(multi-web-global-mode 1)

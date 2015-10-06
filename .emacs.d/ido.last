@@ -2,11 +2,16 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/Users/sangwoo/workspace/" . "react-pluralsight/")
+ ("/Users/sangwoo/" . "workspace/")
  ("/" . ".DocumentRevisions-V100/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/Users/sangwoo/.emacs.d/"
+ "/Users/sangwoo/workspace/react-pluralsight/"
+ "/Users/sangwoo/workspace/react-youtube/"
  "/Users/sangwoo/dotfiles/"
  "/etc/"
  "/Users/sangwoo/"
@@ -14,6 +19,9 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "init.el"
+ "index.html"
+ "template.html"
  ".bashrc"
  "bashrc"
  ".zshrc"
@@ -21,13 +29,25 @@
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/sangwoo/dotfiles/" (22034 4253 0 0) "README.md" ".zshrc~" ".zshrc" ".screenrc" ".gitignore" ".git/" ".emacs.d/" ".DS_Store" ".bashrc_custom" ".bashrc" ".bash_profile" ".#.zshrc" "../" "./")
+ ("/Users/sangwoo/workspace/react-pluralsight/" (22035 26783 0 0) "index.html~" "index.html" ".DS_Store" "#index.html#" "../" "./")
+
+ ("/Users/sangwoo/.emacs.d/" (22035 27052 0 0) "tutorial/" "projectile.cache" "projectile-bookmarks.eld" "node_emacs" "lisp/" "jade-mode/" "init.el" "ido.last~" "ido.last" "elpa/" "auto-save-list/" "ac-comphist.dat" ".mc-lists.el" ".DS_Store" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/" (22035 26615 0 0) "uwsgi_params" "templates/" "static/" "manage_production.py" "manage.py" "djcelery/" "celerybeat-schedule" "bower.json" "bikepass_uwsgi_websocket.ini" "bikepass_uwsgi.ini" "bikepass_project/" "bikepass_nginx.conf" "bikepass.req" ".gitignore" ".git/" ".bowerrc" "../" "./")
+
+ ("/Users/sangwoo/workspace/" (22035 20117 0 0) "react-pluralsight/" ".DS_Store" "../" "./")
+
+ ("/etc/" (22034 39487 0 0) "zshenv" "xtab" "ttys" "syslog.conf" "sudoers" "sudo_lecture" "sshd_config" "ssh_config" "snmp/" "shells" "services" "security/" "rtadvd.conf" "rpc" "rmtab" "resolv.conf" "rc.netboot" "rc.imaging" "rc.common" "racoon/" "protocols" "profile" "ppp/" "postfix/" "php.ini.default" "php-fpm.conf.default" "pf.os" "pf.conf" "pf.anchors/" "periodic/" "paths.d/" "paths" "passwd" "pam.d/" "openldap/" "ntp_opendirectory.conf" "ntp.conf" "ntp-restrict.conf" "notify.conf" "nfs.conf" "newsyslog.d/" "newsyslog.conf" "networks" "nanorc" "moduli" "master.passwd" "manpaths.d/" "manpaths" "man.conf" "mail.rc" "mach_init_per_user.d/" "mach_init_per_login_session.d/" "mach_init.d/" "locate.rc" "localtime" "krb5.keytab" "kern_loader.conf" "irbrc" "hosts.equiv" "hosts" "group" "gettytab" "ftpusers" "ftpd.conf.default" "ftpd.conf" "fstab.hd" "find.codes" "emond.d/" "efax.rc" "dnsextd.conf" "defaults/" "cups/" "csh.logout" "csh.login" "csh.cshrc" "com.apple.screensharing.agent.launchd" "bashrc" "autofs.conf" "auto_master" "auto_home" "asl.conf" "asl/" "apache2/" "aliases.db" "aliases" "afpovertcp.cfg" "../" "./")
+
+ ("/Users/sangwoo/dotfiles/" (22034 37591 0 0) "README.md" ".zshrc~" ".zshrc" ".screenrc" ".gitignore" ".git/" ".emacs.d/" ".DS_Store" ".bashrc_custom" ".bashrc" ".bash_profile" "../" "./")
+
+ ("/Users/sangwoo/workspace/react-youtube/" (22034 15777 0 0) "template.html" "../" "./")
+
+ ("/Users/sangwoo/" (22034 37619 0 0) "workspace/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Downloads/" "dotfiles/" "Documents/" "Desktop/" "Applications/" ".zshrc" ".Xauthority" ".viminfo" ".Trash/" ".ssh/" ".screenrc" ".rnd" ".npm/" ".lesshst" ".gitconfig" ".emacs.d/" ".DS_Store" ".cups/" ".config/" ".CFUserTextEncoding" ".cache/" ".bashrc_custom" ".bashrc" ".bash_profile" ".bash_history" ".bash_eternal_history" "../" "./")
+
+ ("/Users/sangwoo/dotfiles/.emacs.d/" (22034 8289 0 0) "tutorial/" "node_emacs" "lisp/" "jade-mode/" "init.el" "ido.last~" "ido.last" "elpa/" "auto-save-list/" "ac-comphist.dat" ".mc-lists.el" ".DS_Store" "../" "./")
 
  ("/Users/" (22029 13437 0 0) "Shared/" "sangwoo/" ".localized" "../" "./")
-
- ("/Users/sangwoo/" (22034 4339 0 0) "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Downloads/" "dotfiles/" "Documents/" "Desktop/" "Applications/" ".zshrc" ".Xauthority" ".viminfo" ".Trash/" ".ssh/" ".screenrc" ".rnd" ".lesshst" ".gitconfig" ".emacs.d/" ".DS_Store" ".cups/" ".CFUserTextEncoding" ".cache/" ".bash_history" ".bash_eternal_history" ".#.bashrc" "#.zshrc#" "#.bashrc#" "../" "./")
-
- ("/etc/" (22033 22786 0 0) "zshenv" "xtab" "ttys" "syslog.conf" "sudoers" "sudo_lecture" "sshd_config" "ssh_config" "snmp/" "shells" "services" "security/" "rtadvd.conf" "rpc" "rmtab" "resolv.conf" "rc.netboot" "rc.imaging" "rc.common" "racoon/" "protocols" "profile" "ppp/" "postfix/" "php.ini.default" "php-fpm.conf.default" "pf.os" "pf.conf" "pf.anchors/" "periodic/" "paths.d/" "paths" "passwd" "pam.d/" "openldap/" "ntp_opendirectory.conf" "ntp.conf" "ntp-restrict.conf" "notify.conf" "nfs.conf" "newsyslog.d/" "newsyslog.conf" "networks" "nanorc" "moduli" "master.passwd" "manpaths.d/" "manpaths" "man.conf" "mail.rc" "mach_init_per_user.d/" "mach_init_per_login_session.d/" "mach_init.d/" "locate.rc" "localtime" "krb5.keytab" "kern_loader.conf" "irbrc" "hosts.equiv" "hosts" "group" "gettytab" "ftpusers" "ftpd.conf.default" "ftpd.conf" "fstab.hd" "find.codes" "emond.d/" "efax.rc" "dnsextd.conf" "defaults/" "cups/" "csh.logout" "csh.login" "csh.cshrc" "com.apple.screensharing.agent.launchd" "bashrc" "autofs.conf" "auto_master" "auto_home" "asl.conf" "asl/" "apache2/" "aliases.db" "aliases" "afpovertcp.cfg" "../" "./")
 )
 
 ;; ----- ido-unc-hosts-cache -----

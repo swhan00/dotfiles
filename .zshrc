@@ -16,3 +16,5 @@ function server () {
     fi
     open "http://localhost:$port" && python -m SimpleHTTPServer "$port"
 }
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

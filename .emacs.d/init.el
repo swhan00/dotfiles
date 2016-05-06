@@ -17,28 +17,23 @@
 (require 'dired-x)
 (require 'compile)
 
-
-(require 'package) ;; melpa packages
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-(package-initialize)
-
-(require 'auto-complete-config) ;; auto-complete : package-install -> auto-complete
-(ac-config-default)
-
-(require 'expand-region) ;; package-install -> expand-region
-(require 'projectile) ;; package-install -> projectile
-(require 'helm-projectile) ;; package-install -> helm-projectile
-
-(require 'undo-tree) ;; package-install -> undo-tree
-(global-undo-tree-mode 1)
-
-(require 'emmet-mode) ;; package-install -> emmet-mode
-(require 'scss-mode) ;; package-install -> scss-mode
-(require 'multiple-cursors) ;; package-install -> multiple-cursors
-(require 'web-mode) ;; package-install -> web-mode
-(require 'multi-web-mode) ;; package-install -> multi-web-mode
+(require 'cask' "~/.cask/cask.el")
+(cask-initialize)
+;;(require 'package) ;; melpa packages
+;;(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+;;(package-initialize)
 
 
+(ac-config-default) ;; package: auto-complete
+(global-undo-tree-mode 1) ;;package: undo-tree
+
+;; disable vc-git
+(setq vc-handled-backends ())
+
+
+;; set $PATH for shell
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setq exec-path (append exec-path '("/usr/local/bin")))
 
 
 (menu-bar-mode -1)
@@ -52,7 +47,7 @@
 (setq suggest-key-bindings t)
 (setq vc-follow-symlinks t)
 
-;; flx-ido mode   package-install -> flx-ido
+;; flx-ido mode
 (ido-mode t)
 (ido-everywhere 1)
 (flx-ido-mode 1)
@@ -60,6 +55,7 @@
 
 ;; projectile
 (projectile-global-mode)
+
 
 
 ;; Switch option and command in mac
@@ -74,6 +70,7 @@
 ;; --------------------------
 ;; -- indentation settings --
 ;; --------------------------
+(setq-default tab-width 4)
 (electric-indent-mode 1)
 
 ;;; Indentation for python
@@ -197,7 +194,8 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
+(global-unset-key (kbd "M-<down-mouse-1>"))
+(global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click)
 
 
 ;; ---------------------------
@@ -208,6 +206,9 @@
 (require 'sws-mode)
 (require 'jade-mode)
 (require 'js2-mode) ;; package-install -> js2-mode
+(require 'js-comint) ;; package-install -> js-comint
+
+
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)) 
@@ -219,6 +220,68 @@
         (e (if mark-active (max (point) (mark)) (point-max))))
     (shell-command-on-region b e
      "python -mjson.tool" (current-buffer) t)))
+
+(setq inferior-js-program-command "node")
+(setq inferior-js-program-arguments '("--interactive"))
+
+
+(add-hook 'js2-mode-hook '(lambda ()
+			    (local-set-key "\C-x\C-e" 'js-send-last-sexp)			    
+			    (local-set-key "\C-x\C-r" 'js-send-region-and-go)			    
+			    (local-set-key "\C-\M-x" 'js-send-last-sexp-and-go)
+			    (local-set-key "\C-cb" 'js-send-buffer)
+			    (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
+			    (local-set-key "\C-cl" 'js-load-file-and-go)
+			    ))
+
+
+
+
+;; ------------------------------
+;; -- Typescript configuration --
+;; ------------------------------
+
+
+(defun indent-or-complete ()
+    (interactive)
+    (if (looking-at "\\_>")
+        (company-complete-common)
+      (if (use-region-p)
+		  (indent-region (region-beginning) (region-end))
+		(indent-according-to-mode))))
+
+(add-hook 'typescript-mode-hook
+          (lambda ()
+            (tide-setup)
+            (flycheck-mode +1)
+            (setq flycheck-check-syntax-automatically '(save idle-change mode-enabled))
+            (eldoc-mode +1)
+			(company-mode)
+			(setq company-minimum-prefix-length 2)
+			(setq company-idle-delay 0)
+			(setq company-dabbrev-downcase nil)
+			(local-set-key [tab] 'indent-or-complete)))
+
+;; aligns annotation to the right hand side
+(setq company-tooltip-align-annotations t)
+
+
+;; Tide can be used along with web-mode to edit tsx files
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (string-equal "tsx" (file-name-extension buffer-file-name))
+              (tide-setup)
+              (flycheck-mode +1)
+              (setq flycheck-check-syntax-automatically '(save idle-change mode-enabled))
+              (eldoc-mode +1)
+			  (company-mode)
+			  (setq company-minimum-prefix-length 2)
+			  (setq company-idle-delay 0)
+			  (setq company-dabbrev-downcase nil)
+			  (local-set-key [tab] 'indent-or-complete))))
+
 
 
 
@@ -243,7 +306,7 @@
 ;; -----------------------------
 ;; -- HTML Mode configuration --
 ;; -----------------------------
-(add-hook 'html-mode-hook
+(add-hook 'sgml-mode-hook
   (lambda ()
     ;; Default indentation is usually 2 spaces, changing to 4.
     (set (make-local-variable 'sgml-basic-offset) 4)))
@@ -258,6 +321,16 @@
   (add-to-list 'ac-sources 'ac-source-css-property))
 (add-hook 'scss-mode-hook 'configure-auto-complete-for-scss)
 (add-to-list 'ac-modes 'scss-mode)
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+
+
+;; inline comment as default
+(add-hook 'scss-mode-hook
+          (lambda ()
+            (set (make-local-variable 'comment-start) "//")
+            (set (make-local-variable 'comment-end) "")))
+
 
 
 
@@ -266,6 +339,7 @@
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
 (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
 (add-hook 'scss-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+(add-hook 'web-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
 
 
 
@@ -273,28 +347,53 @@
 ;; -- Web Mode configuration --
 ;; -----------------------------
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
-
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+
+
+(setq web-mode-engines-alist
+      '(("php"    . "\\.phtml\\'")
+        ("blade"  . "\\.blade\\."))
+)
+
+
+
+(setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'"))) ;; jsx mode on js files
+
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 4)
+  (setq web-mode-code-indent-offset 4)
+  (setq web-mode-enable-auto-quoting nil))
+(add-hook 'web-mode-hook  'my-web-mode-hook)
+
 (defadvice web-mode-highlight-part (around tweak-jsx activate)
   (if (equal web-mode-content-type "jsx")
       (let ((web-mode-enable-part-face nil))
         ad-do-it)
     ad-do-it))
 
+;; (flycheck-define-checker jsxhint-checker
+;;   "A JSX syntax and style checker based on JSXHint."
 
-(setq mweb-default-major-mode 'sgml-mode)
-(setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
-                  (js2-mode "<script +\\(type=\"text/javascript\"\\|language=\"javascript\"\\)[^>]*>" "</script>")
-		  (js2-mode "<script>" "</script>")
-		  (web-mode "<script +\\(type=\"text/jsx\"\\|language=\"javascript\"\\)[^>]*>" "</script>")
-                  (scss-mode "<style +type=\"text/css\"[^>]*>" "</style>")
-		  (scss-mode "<style>" "</style>")))
-(setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
-(multi-web-global-mode 1)
+;;   :command ("jsxhint" source)
+;;   :error-patterns
+;;   ((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
+;;   :modes (web-mode))
+;; (add-hook 'web-mode-hook
+;;           (lambda ()
+;;             (when (equal web-mode-content-type "jsx")
+;;               ;; enable flycheck
+;;               (flycheck-select-checker 'jsxhint-checker)
+;;               (flycheck-mode))))
+
+
+

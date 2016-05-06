@@ -175,11 +175,11 @@ alias cp="cp -i"
 set -o noclobber
 
 # 2.2) Listing, directories, and motion
-alias ll="ls -alrtFG"
-alias la="ls -A"
-alias l="ls -CF"
-alias dir='ls -G --format=vertical'
-alias vdir='ls -G --format=long'
+alias ll="ls -walrtFG"
+alias la="ls -wA"
+alias l="ls -wCF"
+alias dir='ls -wG --format=vertical'
+alias vdir='ls -wG --format=long'
 alias m='less'
 alias ..='cd ..'
 alias ...='cd ..;cd ..'
@@ -235,3 +235,4 @@ export LC_ALL=POSIX
 
 # PATH=${CUDA_HOME}/bin:${PATH}
 # export PATH
+source /usr/local/opt/nvm/nvm.sh

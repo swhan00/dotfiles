@@ -2,52 +2,386 @@
 
 ;; ----- ido-last-directory-list -----
 (
- ("/Users/sangwoo/workspace/" . "react-pluralsight/")
- ("/Users/sangwoo/" . "workspace/")
- ("/" . ".DocumentRevisions-V100/")
+ ("/Applications/MAMP/htdocs/wordpress/wp-content/themes/" . "learningWordPress/")
+ ("/Applications/MAMP/htdocs/wordpress/wp-content/" . "themes/")
+ ("/Applications/MAMP/htdocs/wordpress/" . "wp-content/")
+ ("/Applications/MAMP/htdocs/" . "wordpress/")
+ ("/Applications/MAMP/" . "htdocs/")
+ ("/Applications/" . "MAMP/")
+ ("/Users/sangwoo/workspace/wp-calypso/client/my-sites/" . "hello-world/")
+ ("/Users/sangwoo/workspace/wp-calypso/client/" . "my-sites/")
+ ("/Users/sangwoo/workspace/wp-calypso/" . "client/")
+ ("/Users/sangwoo/workspace/sungsan-scratch/" . "server/")
+ ("/Users/sangwoo/workspace/sample-apps/Angular-TypeScript/" . "APM/")
+ ("/Users/sangwoo/workspace/sample-apps/typescript-scratch/scripts/" . "typings/")
+ ("/Users/sangwoo/workspace/sample-apps/typescript-scratch/" . "scripts/")
+ ("/Users/sangwoo/workspace/sample-apps/angular2-quickstart/" . "app/")
+ ("/Users/sangwoo/workspace/sample-apps/js-design-patterns/js/" . "factory/")
+ ("/Users/sangwoo/workspace/sample-apps/js-design-patterns/" . "js/")
+ ("/Users/sangwoo/workspace/bikepass_project/virEnv/" . "bin/")
+ ("/Users/sangwoo/workspace/sample-apps/" . "TypeScriptSamples/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/shop-create-page/" . "directives/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/shop-detail-page/directives/" . "shop-image-slider/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/lib/bootstrap-sass/assets/" . "stylesheets/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/lib/bootstrap-sass/" . "assets/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/lib/" . "bootstrap-sass/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/bike-detail-page/" . "controllers/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/rauction-detail-page/" . "services/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/shop-detail-page/" . "services/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/my-requests-page/" . "services/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/rauction-create-page/" . "services/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/shop-list-page/" . "services/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/rauction-list-page/directives/" . "rfq-board/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/rauction-list-page/" . "services/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/main-page/" . "controllers/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/common/directives/" . "drop-inject-to/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/lib/bootstrap-sass/assets/stylesheets/" . "bootstrap/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/common/" . "constants/")
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/prebuilt-src/src/main-page/" . "constants/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/sales-mgmt-page/" . "services/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/search-page/" . "controllers/")
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/prebuilt-src/src/loan-page/" . "components/")
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/prebuilt-src/images/BI/" . "insure/")
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/prebuilt-src/images/" . "BI/")
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/prebuilt-src/src/card-page/" . "constants/")
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/prebuilt-src/src/my-page/" . "stores/")
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/prebuilt-src/src/common/" . "utils/")
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/prebuilt-src/" . "src/")
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/prebuilt-src/src/insure-page/" . "constants/")
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/" . "webapp/")
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/resources/" . "js/")
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/WEB-INF/views/" . "loan-page/")
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/WEB-INF/" . "views/")
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/" . "resources/")
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/prebuilt-src/src/" . "common/")
+ ("/Users/sangwoo/workspace/mopicpcweb/src/main/webapp/" . "resources/")
+ ("/Users/sangwoo/workspace/mopicpcweb/src/main/" . "webapp/")
+ ("/Users/sangwoo/workspace/mopicpcweb/src/" . "main/")
+ ("/Users/sangwoo/workspace/mo-pic-client/src/savings-page/" . "components/")
+ ("/Users/sangwoo/workspace/mo-pic-client/src/common/" . "actions/")
+ ("/Users/sangwoo/workspace/mo-pic-client/bower_components/bootstrap-sass/assets/" . "stylesheets/")
+ ("/Users/sangwoo/workspace/mo-pic-client/bower_components/bootstrap-sass/" . "assets/")
+ ("/Users/sangwoo/workspace/mo-pic-client/bower_components/" . "bootstrap-sass/")
+ ("/Users/sangwoo/workspace/react/author-quiz/public/scripts/" . "jsx/")
+ ("/Users/sangwoo/dotfiles/" . ".emacs.d/")
+ ("/Users/sangwoo/workspace/scraping/node-postgres-todo/" . "models/")
+ ("/Users/sangwoo/workspace/scraping/mo-pic-insure/" . "data/")
+ ("/Users/sangwoo/workspace/react/temp/" . "server/")
+ ("/Users/sangwoo/workspace/scraping/" . "mo-pic-insure/")
+ ("/Users/sangwoo/workspace/react/express-isomorphic/app/" . "components/")
+ ("/Users/sangwoo/workspace/react/express-isomorphic/" . "app/")
+ ("/Users/sangwoo/dotfiles/.emacs.d/elpa/" . "auto-complete-20150618.1949/")
+ ("/Users/sangwoo/dotfiles/.emacs.d/" . "elpa/")
+ ("/Users/" . "sangwoo/")
+ ("/Users/sangwoo/workspace/mo-pic-client/src/main-page/" . "constants/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/bike-register-page/directives/" . "bike-form/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/bike-register-page/" . "controllers/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/bike-enroll-page/" . "controllers/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/" . "common/")
+ ("/Users/sangwoo/workspace/react/shopping-cart/" . "js/")
+ ("/Users/sangwoo/workspace/react/react-flux-pluralsight/src/" . "stores/")
+ ("/Users/sangwoo/workspace/react/shopping-cart/js/" . "components/")
+ ("/Users/sangwoo/workspace/mo-pic-client/src/temp-page/" . "components/")
+ ("/Users/sangwoo/workspace/mo-pic-client/dist/scripts/src/" . "temp-page/")
+ ("/Users/sangwoo/workspace/mo-pic-client/dist/scripts/" . "src/")
+ ("/Users/sangwoo/workspace/mo-pic-client/dist/" . "scripts/")
+ ("/Users/sangwoo/workspace/mo-pic-client/" . "src/")
+ ("/Users/sangwoo/workspace/react/author-quiz/" . "public/")
+ ("/Users/sangwoo/workspace/react/react-flux-pluralsight/" . "src/")
+ ("/Users/sangwoo/workspace/mo-pic-client/src/" . "common/")
+ ("/Users/sangwoo/.emacs.d/" . "lisp/")
+ ("/Users/sangwoo/workspace/react/" . "temp/")
+ ("/Users/sangwoo/workspace/react-flux/" . "src/")
+ ("/Users/sangwoo/workspace/react-flux-starter-kit/" . "src/")
+ ("/Users/sangwoo/workspace/react-flux/src/components/" . "common/")
+ ("/Users/sangwoo/workspace/react-flux/src/" . "components/")
+ ("/Users/sangwoo/workspace/react-pluralsight/public/scripts/" . "jsx/")
+ ("/Users/sangwoo/workspace/react-pluralsight/public/" . "scripts/")
+ ("/Users/sangwoo/workspace/coocha-finance-temp/public/scripts/" . "jsx/")
+ ("/Users/sangwoo/workspace/coocha-finance-temp/public/" . "scripts/")
+ ("/Users/sangwoo/workspace/bikepass_project/templates/" . "shop/")
+ ("/Users/sangwoo/workspace/react-tutorial-master/" . "public/")
+ ("/Users/sangwoo/workspace/coocha-finance-temp/" . "public/")
+ ("/Users/sangwoo/workspace/react-pluralsight/react-tutorial-master/public/" . "scripts/")
+ ("/Users/sangwoo/workspace/react-pluralsight/react-tutorial-master/" . "public/")
+ ("/Users/sangwoo/workspace/react-pluralsight/" . "public/")
+ ("/Users/sangwoo/workspace/bikepass_project/static/" . "css/")
+ ("/Users/sangwoo/workspace/bikepass_project/" . "static/")
+ ("/Users/sangwoo/workspace/" . "sungsan-scratch/")
+ ("/Users/sangwoo/" . "Applications/")
+ ("/" . "Applications/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
- "/Users/sangwoo/.emacs.d/"
- "/Users/sangwoo/workspace/react-pluralsight/"
- "/Users/sangwoo/workspace/react-youtube/"
+ "/Users/sangwoo/dotfiles/.emacs.d/"
+ "/Users/sangwoo/workspace/python/pdf-scratch/"
+ "/Applications/MAMP/htdocs/wordpress/wp-content/themes/learningWordPress/"
+ "/Applications/MAMP/htdocs/wordpress/wp-content/themes/"
+ "/Users/sangwoo/workspace/wp-calypso/client/my-sites/"
+ "/Users/sangwoo/workspace/wp-calypso/client/"
+ "/Users/sangwoo/workspace/wp-calypso/client/my-sites/hello-world/"
+ "/Users/sangwoo/workspace/sungsan-scratch/server/"
+ "/Users/sangwoo/workspace/sample-apps/typescript-scratch/"
+ "/Users/sangwoo/workspace/sample-apps/temp/"
+ "/Users/sangwoo/workspace/sample-apps/angular2-quickstart/"
+ "/Users/sangwoo/workspace/sample-apps/angular2-quickstart/app/"
+ "/Users/sangwoo/workspace/sample-apps/angular2-seed/"
+ "/Users/sangwoo/workspace/sample-apps/Angular-TypeScript/APM/app/products/"
+ "/Users/sangwoo/workspace/sample-apps/typescript-scratch/scripts/typings/"
+ "/Users/sangwoo/workspace/sample-apps/js-design-patterns/js/mediator/"
  "/Users/sangwoo/dotfiles/"
- "/etc/"
- "/Users/sangwoo/"
+ "/Users/sangwoo/workspace/sample-apps/js-design-patterns/js/observer/"
+ "/Users/sangwoo/workspace/sample-apps/js-design-patterns/js/pubsub/"
+ "/Users/sangwoo/workspace/sample-apps/js-design-patterns/js/strategy/"
+ "/Users/sangwoo/workspace/sample-apps/js-design-patterns/js/factory/"
+ "/Users/sangwoo/workspace/sample-apps/js-design-patterns/"
+ "/Users/sangwoo/workspace/sample-apps/js-design-patterns/js/"
+ "/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/prebuilt-src/src/common/"
+ "/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/common/directives/checkbox-list/"
+ "/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/rauction-create-page/services/"
+ "/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/rauction-list-page/services/"
+ "/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/search-page/constants/"
+ "/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/search-page/controllers/"
+ "/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/rauction-list-page/constants/"
+ "/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/search-page/services/"
+ "/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/common/utils/"
+ "/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/classes/"
+ "/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/common/constants/"
+ "/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/constants/"
+ "/Users/sangwoo/workspace/bikepass_project/static/js/"
+ "/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/"
+ "/Users/sangwoo/workspace/sample-apps/es6-custom-event-example/"
+ "/Users/sangwoo/workspace/sample-apps/web-components/"
+ "/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/bike-register-page/controllers/"
+ "/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/main-page/controllers/"
+ "/Users/sangwoo/workspace/sample-apps/binding-form-to-localstorage/"
+ "/Users/sangwoo/workspace/sample-apps/pushstate-example/"
+ "/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/resources/js/"
+ "/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/bike-register-page/directives/bike-form/"
+ "/Users/sangwoo/workspace/bikepass_project/virEnv/bin/"
+ "/Users/sangwoo/workspace/temp/"
+ "/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/shop-create-page/directives/"
+ "/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/common/directives/bike-card/"
+ "/Users/sangwoo/workspace/eclipse/mopicPCWEB/"
 )
 
 ;; ----- ido-work-file-list -----
 (
  "init.el"
- "index.html"
- "template.html"
- ".bashrc"
- "bashrc"
- ".zshrc"
+ ".projectile"
+ "functions.php"
+ "footer.php"
+ "Cask"
+ "header.php"
+ "index.php"
+ "controller.js"
+ "sections.js"
+ "index.js"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/sangwoo/workspace/react-pluralsight/" (22035 26783 0 0) "index.html~" "index.html" ".DS_Store" "#index.html#" "../" "./")
+ ("/Users/sangwoo/dotfiles/.emacs.d/" (22315 2933 0 0) "tutorial/" "projectile.cache" "projectile-bookmarks.eld" "node_emacs" "lisp/" "jade-mode/" "init.el" "ido.last" "Cask" "auto-save-list/" "ac-comphist.dat" ".mc-lists.el" ".DS_Store" ".cask/" "../" "./")
 
- ("/Users/sangwoo/.emacs.d/" (22035 27052 0 0) "tutorial/" "projectile.cache" "projectile-bookmarks.eld" "node_emacs" "lisp/" "jade-mode/" "init.el" "ido.last~" "ido.last" "elpa/" "auto-save-list/" "ac-comphist.dat" ".mc-lists.el" ".DS_Store" "../" "./")
+ ("/Users/sangwoo/workspace/python/pdf-scratch/" (22313 44789 0 0) "yadda" "scratch.py~" "scratch.py" "sample2.pdf" "sample.pdfxml" "sample.pdf" "pip-selfcheck.json" "out9.pdf" "out8.pdf" "out7.pdf" "out6.pdf" "out5.pdf" "out4.pdf" "out3.pdf" "out29.pdf" "out28.pdf" "out27.pdf" "out26.pdf" "out25.pdf" "out24.pdf" "out23.pdf" "out22.pdf" "out21.pdf" "out20.pdf" "out2.pdf" "out19.pdf" "out18.pdf" "out17.pdf" "out16.pdf" "out15.pdf" "out14.pdf" "out13.pdf" "out12.pdf" "out11.pdf" "out10.pdf" "out1.pdf" "out0.pdf" "out.zip" "out.svg" "out.pdfxml" "out.pdf" "out/" "lib/" "include/" "fboaward_menplayer2014_neutral.pdf" "bin/" ".Python" ".projectile~" ".projectile" ".git/" ".DS_Store" "#out.pdfxml#" "../" "./")
 
- ("/Users/sangwoo/workspace/bikepass_project/" (22035 26615 0 0) "uwsgi_params" "templates/" "static/" "manage_production.py" "manage.py" "djcelery/" "celerybeat-schedule" "bower.json" "bikepass_uwsgi_websocket.ini" "bikepass_uwsgi.ini" "bikepass_project/" "bikepass_nginx.conf" "bikepass.req" ".gitignore" ".git/" ".bowerrc" "../" "./")
+ ("/Applications/MAMP/htdocs/wordpress/wp-content/themes/learningWordPress/" (22315 3032 0 0) "style.css~" "style.css" "index.php~" "index.php" "header.php~" "header.php" "functions.php~" "functions.php" "footer.php~" "footer.php" ".vscode/" ".projectile" "../" "./")
 
- ("/Users/sangwoo/workspace/" (22035 20117 0 0) "react-pluralsight/" ".DS_Store" "../" "./")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/common/constants/" (22277 58471 0 0) "years.js~" "years.js" "wheel-sizes.js" "weight.js~" "weight.js" "price.js~" "price.js" "handle-bars.js~" "handle-bars.js" "gear-types.js~" "gear-types.js" "gear-models.js" "gear-grades.js" "gear-brands.js~" "gear-brands.js" "frames.js~" "frames.js" "foldings.js" "brands.js~" "brands.js" "brake-types.js" "bike-types.js~" "bike-types.js" "../" "./")
 
- ("/etc/" (22034 39487 0 0) "zshenv" "xtab" "ttys" "syslog.conf" "sudoers" "sudo_lecture" "sshd_config" "ssh_config" "snmp/" "shells" "services" "security/" "rtadvd.conf" "rpc" "rmtab" "resolv.conf" "rc.netboot" "rc.imaging" "rc.common" "racoon/" "protocols" "profile" "ppp/" "postfix/" "php.ini.default" "php-fpm.conf.default" "pf.os" "pf.conf" "pf.anchors/" "periodic/" "paths.d/" "paths" "passwd" "pam.d/" "openldap/" "ntp_opendirectory.conf" "ntp.conf" "ntp-restrict.conf" "notify.conf" "nfs.conf" "newsyslog.d/" "newsyslog.conf" "networks" "nanorc" "moduli" "master.passwd" "manpaths.d/" "manpaths" "man.conf" "mail.rc" "mach_init_per_user.d/" "mach_init_per_login_session.d/" "mach_init.d/" "locate.rc" "localtime" "krb5.keytab" "kern_loader.conf" "irbrc" "hosts.equiv" "hosts" "group" "gettytab" "ftpusers" "ftpd.conf.default" "ftpd.conf" "fstab.hd" "find.codes" "emond.d/" "efax.rc" "dnsextd.conf" "defaults/" "cups/" "csh.logout" "csh.login" "csh.cshrc" "com.apple.screensharing.agent.launchd" "bashrc" "autofs.conf" "auto_master" "auto_home" "asl.conf" "asl/" "apache2/" "aliases.db" "aliases" "afpovertcp.cfg" "../" "./")
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/bike-register-page/controllers/" (22276 44095 0 0) "index.js" "bike-register-controller.js~" "bike-register-controller.js" "#bike-register-controller.js#" "../" "./")
 
- ("/Users/sangwoo/dotfiles/" (22034 37591 0 0) "README.md" ".zshrc~" ".zshrc" ".screenrc" ".gitignore" ".git/" ".emacs.d/" ".DS_Store" ".bashrc_custom" ".bashrc" ".bash_profile" "../" "./")
+ ("/Applications/MAMP/htdocs/wordpress/wp-content/themes/" (22312 20373 0 0) "twentysixteen/" "twentyfourteen/" "twentyfifteen/" "learningWordPress/" "index.php" ".DS_Store" "../" "./")
 
- ("/Users/sangwoo/workspace/react-youtube/" (22034 15777 0 0) "template.html" "../" "./")
+ ("/Applications/MAMP/htdocs/wordpress/wp-content/" (22312 20361 0 0) "upgrade/" "themes/" "plugins/" "languages/" "index.php" ".DS_Store" "../" "./")
 
- ("/Users/sangwoo/" (22034 37619 0 0) "workspace/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Downloads/" "dotfiles/" "Documents/" "Desktop/" "Applications/" ".zshrc" ".Xauthority" ".viminfo" ".Trash/" ".ssh/" ".screenrc" ".rnd" ".npm/" ".lesshst" ".gitconfig" ".emacs.d/" ".DS_Store" ".cups/" ".config/" ".CFUserTextEncoding" ".cache/" ".bashrc_custom" ".bashrc" ".bash_profile" ".bash_history" ".bash_eternal_history" "../" "./")
+ ("/Applications/MAMP/htdocs/wordpress/" (22312 20310 0 0) "xmlrpc.php" "wp-trackback.php" "wp-signup.php" "wp-settings.php" "wp-mail.php" "wp-login.php" "wp-load.php" "wp-links-opml.php" "wp-includes/" "wp-cron.php" "wp-content/" "wp-config.php" "wp-config-sample.php" "wp-comments-post.php" "wp-blog-header.php" "wp-admin/" "wp-activate.php" "readme.html" "license.txt" "index.php" ".htaccess" ".DS_Store" "../" "./")
 
- ("/Users/sangwoo/dotfiles/.emacs.d/" (22034 8289 0 0) "tutorial/" "node_emacs" "lisp/" "jade-mode/" "init.el" "ido.last~" "ido.last" "elpa/" "auto-save-list/" "ac-comphist.dat" ".mc-lists.el" ".DS_Store" "../" "./")
+ ("/Applications/MAMP/htdocs/" (22312 20305 0 0) "wordpress/" ".DS_Store" "../" "./")
 
- ("/Users/" (22029 13437 0 0) "Shared/" "sangwoo/" ".localized" "../" "./")
+ ("/Applications/MAMP/" (22312 19687 0 0) "お読みください.rtf" "прочти.rtf" "tmp/" "README.rtf" "MAMP.app/" "logs/" "LISEZ-MOI.rtf" "LIESMICH.rtf" "licences/" "Library/" "LEAME.rtf" "Icon
+" "htdocs/" "fcgi-bin/" "db/" "conf/" "cgi-bin/" "bin/" ".DS_Store" "../" "./")
+
+ ("/Applications/" (22312 18220 0 0) "Xcode.app/" "VOX.app/" "VLC.app/" "Visual Studio Code.app/" "VirtualBox.app/" "uTorrent.app/" "Utilities/" "Time Machine.app/" "TextWrangler.app/" "TextEdit.app/" "System Preferences.app/" "Stickies.app/" "SourceTree.app/" "Slack.app/" "Skype.app/" "Safari.app/" "Reminders.app/" "QuickTime Player.app/" "PSequel.app/" "Preview.app/" "Pocket.app/" "PhotoScapeX.app/" "Photos.app/" "Photo Booth.app/" "pgAdmin3.app/" "Pages.app/" "Numbers.app/" "Notes.app/" "Moom.app/" "Mission Control.app/" "Messages.app/" "Maps.app/" "MAMP PRO/" "MAMP/" "Mail.app/" "Launchpad.app/" "Keynote.app/" "KakaoTalk.app/" "iTunes.app/" "iTerm.app/" "iMovie.app/" "Image Capture.app/" "iBooks.app/" "HwpMac2014VIEWER.app/" "Google Chrome.app/" "GIMP.app/" "GarageBand.app/" "Game Center.app/" "Font Book.app/" "Firefox.app/" "FaceTime.app/" "Evernote.app/" "Emacs.app/" "Eclipse.app/" "DVD Player.app/" "Dictionary.app/" "Dashboard.app/" "Dash.app/" "Contacts.app/" "Chess.app/" "Calendar.app/" "Calculator.app/" "Bandizip X.app/" "Automator.app/" "AppCleaner.app/" "App Store.app/" "Adobe Acrobat Reader DC.app/" ".localized" ".DS_Store" "../" "./")
+
+ ("/Users/sangwoo/" (22313 20004 0 0) "workspace/" "VirtualBox VMs/" "Sites/" "Public/" "Pictures/" "photorec.ses" "pgadmin.log" "Music/" "Movies/" "Library/" "Downloads/" "dotfiles/" "Documents/" "Desktop/" "Applications/" "AppData/" "afile" ".zshrc" ".zlogin" ".Xauthority" ".vscode/" ".viminfo" ".v8flags.4.5.103.35.sangwoo.json" ".v8flags.4.5.103.33.sangwoo.json" ".Trash/" ".swfinfo" ".subversion/" ".ssid" ".ssh/" ".slackcat" ".sh_history" ".screenrc" ".rvm/" ".rnd" ".psql_history" ".profile" ".pgpass" ".pgadmin_histoqueries" ".p2/" ".oracle_jre_usage/" ".nvm/" ".npm/" ".node_repl_history" ".node-gyp/" ".mongorc.js" ".mkshrc" ".m2/" ".local/" ".lesshst" ".kodi/" ".ipython/" ".inputrc" ".homebrew_analytics_user_uuid" ".hgignore_global" ".gitignore_global" ".gitconfig" ".gemrc" ".gem/" ".emacs.d/" ".eclipse/" ".DS_Store" ".dbshell" ".cups/" ".config/" ".CFUserTextEncoding" ".cask/" ".cache/" ".bashrc_custom" ".bashrc" ".bash_sessions/" ".bash_profile" ".bash_history" ".bash_eternal_history" ".babel.json" ".489614.padl" "../" "./")
+
+ ("/Users/sangwoo/workspace/" (22312 19731 0 0) "sungsan-scratch/" "scraping/" "sample-apps/" "react/" "python/" "mo-pic-client/" "eclipse/" "coocha-finance-temp/" "bikepass_project/" ".DS_Store" "../" "./")
+
+ ("/Users/sangwoo/workspace/scraping/" (22103 61116 0 0) "test.js" "sample.js" "node-postgres-todo/" "mo-pic-insure/" "googlelinks.js" "google_test.js" "casper_test.js" ".DS_Store" "../" "./")
+
+ ("/Users/sangwoo/workspace/scraping/mo-pic-insure/" (22313 20472 0 0) "ympdev2015.pem" "term-death.js" "temp.js~" "temp.js" "scrape-all.js~" "scrape-all.js" "pension-savings.js~" "pension-savings.js" "node_modules/" "injury-disease.js~" "injury-disease.js" "increase-loss-rates.js~" "increase-loss-rates.js" "death-product-summary/" "data-import.js~" "data-import.js" "data/" "automobile.js~" "automobile.js" ".projectile" ".gitignore" ".git/" ".DS_Store" ".babelrc~" ".babelrc" "#scrape-all.js#" "#increase-loss-rates.js#" "../" "./")
+
+ ("/Users/sangwoo/Applications/" (22279 14924 0 0) "Chrome Apps.localized/" ".localized" ".DS_Store" "../" "./")
+
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/" (22312 13152 0 0) "target/" "src/" "pom.xml" "bin" ".springBeans" ".settings/" ".projectile~" ".projectile" ".project" ".gitignore~" ".gitignore" ".git/" ".externalToolBuilders/" ".DS_Store" ".classpath" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/web-components/" (22275 25209 0 0) "index.html~" "index.html" "bower_components/" "../" "./")
+
+ ("/Users/sangwoo/workspace/sungsan-scratch/server/" (22311 2780 0 0) "typings.json" "typings/" "tsconfig.json~" "tsconfig.json" "server.ts~" "server.ts" "../" "./")
+
+ ("/Users/sangwoo/workspace/wp-calypso/client/" (22312 878 0 0) "vip/" "support/" "state/" "signup/" "sections.js~" "sections.js" "sections-preload.js" "README.md" "reader/" "post-editor/" "notifications/" "notices/" "my-sites/" "me/" "mailing-lists/" "lib/" "layout/" "dispatcher/" "devdocs/" "controller.js" "config/" "components/" "boot/" "auth/" "../" "./")
+
+ ("/Users/sangwoo/workspace/wp-calypso/client/my-sites/hello-world/" (22312 699 0 0) "index.js" "controller.js~" "controller.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/wp-calypso/client/my-sites/" (22312 524 0 0) "welcome/" "upgrades/" "upgrade-nudge/" "types/" "themes/" "stats/" "sites/" "site-settings/" "site-indicator/" "site/" "sidebar-navigation/" "sidebar/" "sharing/" "resume-editing/" "README.md" "posts/" "post-type-list/" "post-type-filter/" "post-selector/" "post-relative-time-status/" "post/" "plugins-wpcom/" "plugins/" "plans/" "plan-storage/" "plan-compare-card/" "picker/" "people/" "pages/" "no-results/" "navigation/" "menus/" "media-library/" "media/" "jetpack-manage-error-page/" "invites/" "index.js" "importer/" "hello-world/" "feature-comparison/" "exporter/" "drafts/" "draft/" "customize/" "current-site/" "controller.js" "category-selector/" "all-sites-icon/" "all-sites/" "ads/" "../" "./")
+
+ ("/Users/sangwoo/workspace/wp-calypso/" (22311 30562 0 0) "webpack.config.node.js" "webpack.config.js" "Vagrantfile-boot2docker" "Vagrantfile" "test/" "server/" "README.md" "public/" "package.json" "npm-shrinkwrap.json" "node_modules/" "Makefile" "LICENSE.md" "jsconfig.json" "index.js" "docs/" "Dockerfile" "CREDITS.md" "config/" "CODE-OF-CONDUCT.md" "client/" "circle.yml" "catch-js-errors.js" "build/" "bin/" "assets/" ".rtlcssrc" ".npmrc" ".jsfmtrc" ".gitignore" ".github/" ".git/" ".eslintrc.js" ".eslintignore" ".esformatter" ".env" ".editorconfig" ".dockerignore" "../" "./")
+
+ ("/Users/sangwoo/workspace/wp-calypso/config/" (22312 425 0 0) "wpcalypso.json" "test.json" "stage.json" "README.md" "production.json" "horizon.json" "empty-secrets.json" "development.json~" "development.json" "desktop.json" "desktop-mac-app-store.json" "client.json" "_shared.json" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/common/directives/bike-card/" (22270 4683 0 0) "bike-card.js~" "bike-card.js" "bike-card.html~" "bike-card.html" "_bike-card.scss~" "_bike-card.scss" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/virEnv/bin/" (22273 65027 0 0) "wheel" "uwsgi" "taskadmin" "sqlformat" "sphinx-me" "sdbadmin" "s3put" "route53" "python2.7" "python2" "python" "pygmentize" "pybabel" "pyami_sendmail" "pip2.7" "pip2" "pip" "pilprint.pyc" "pilprint.py" "pilfont.pyc" "pilfont.py" "pilfile.pyc" "pilfile.py" "pildriver.pyc" "pildriver.py" "pilconvert.pyc" "pilconvert.py" "mturk" "lss3" "list_instances" "launch_instance" "kill_instance" "jwt" "instance_events" "http" "gunicorn_paster" "gunicorn_django" "gunicorn" "glacier" "flower" "fetch_file" "fab" "elbadmin" "easy_install-2.7" "easy_install" "dynamodb_load" "dynamodb_dump" "django-admin.pyc" "django-admin.py" "django-admin" "cwutil" "cssparse" "csscombine" "csscapture" "cq" "cfadmin" "celeryd-multi" "celeryd" "celerybeat" "celery" "bundle_image" "asadmin" "activate~" "activate_this.py" "activate.fish" "activate.csh" "activate" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/binding-form-to-localstorage/" (22274 10960 0 0) "index.html~" "index.html" ".projectile" ".git/" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/pushstate-example/" (22274 3698 0 0) "index.html~" "index.html" ".projectile" ".git/" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/es6-custom-event-example/" (22269 55344 0 0) "toolbar.js~" "toolbar.js" "index.html~" "index.html" "EventTarget.js~" "EventTarget.js" "bower_components/" ".projectile~" ".projectile" ".gitignore~" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/typescript-scratch/" (22310 59081 0 0) "utils.ts~" "utils.ts" "utils.js.map" "utils.js" "typings.json" "typings/" "tsconfig.json~" "tsconfig.json" "shapes.ts~" "shapes.ts" "shapes.js.map" "shapes.js" "server.ts~" "server.ts" "server.js.map" "server.js" "package.json" "node_modules/" "modules.ts~" "modules.ts" "modules.js.map" "modules.js" "modules.html" "index.html~" "index.html" "HelloWorld.ts~" "HelloWorld.ts" "HelloWorld.js.map" "HelloWorld.js" "dataservice.ts~" "dataservice.ts" "dataservice.js.map" "dataservice.js" "auto.ts~" "auto.ts" "auto.js.map" "auto.js" ".projectile" ".git/" "../" "./")
+
+ ("/Users/sangwoo/workspace/sungsan-scratch/" (22310 63595 0 0) "server/" ".git/" "../" "./")
+
+ ("/Users/" (22243 49550 0 0) "Shared/" "sangwoo/" ".localized" "../" "./")
+
+ ("/Users/sangwoo/workspace/sungsan/" (22310 63544 0 0) "server/" ".git/" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/TypeScriptSamples/" (22310 61827 0 0) "warship/" "umd/" "todomvc/" "systemjs/" "simple/" "README.md" "react-flux-babel-karma/" "raytracer/" "node/" "mankala/" "jsx/" "jspm/" "jquery/" "interfaces/" "imageboard/" "greeter/" "d3/" "CONTRIBUTING.md" "buildall.cmd" "browserify/" "async/" "angular2/" "angular1/" "amd/" ".gitignore" ".gitattributes" ".git/" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/" (22310 61820 0 0) "web-components/" "TypeScriptSamples/" "typescript-scratch/" "temp/" "pushstate-example/" "js-design-patterns/" "es6-custom-event-example/" "binding-form-to-localstorage/" "angular2-seed-project/" "angular2-quickstart/" ".DS_Store" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/temp/" (22310 56715 0 0) "typings.json" "typings/" "tsconfig.json" "node_modules/" "b.ts~" "b.ts" "b.js.map" "b.js" "a.ts~" "a.ts" "a.js.map" "a.js" ".git/" "../" "./")
+
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/prebuilt-src/src/card-page/components/" (22301 41575 0 0) "CardResultSection.jsx~" "CardResultSection.jsx" "CardProductAdder.jsx~" "CardProductAdder.jsx" "CardHelperSection.jsx~" "CardHelperSection.jsx" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/shop-create-page/directives/" (22230 31340 0 0) "index.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/resources/js/" (22301 41588 0 0) "savings-page.bundle.min.js" "savings-page.bundle.js" "savings-page.bundle.ie.min.js" "p2p-page.bundle.min.js" "p2p-page.bundle.js" "p2p-page.bundle.ie.min.js" "my-page-join.bundle.min.js" "my-page-join.bundle.js" "my-page-join.bundle.ie.min.js" "mobile-detect.min.js" "main-page.bundle.min.js" "main-page.bundle.js" "main-page.bundle.ie.min.js" "loan-page.bundle.min.js" "loan-page.bundle.js" "loan-page.bundle.ie.min.js" "join-product.bundle.min.js" "join-product.bundle.js" "join-product.bundle.ie.min.js" "insure-page.bundle.min.js" "insure-page.bundle.js~" "insure-page.bundle.js" "insure-page.bundle.ie.min.js" "getUserInfo.bundle.min.js" "getUserInfo.bundle.js" "getUserInfo.bundle.ie.min.js" "exchange-page.bundle.min.js" "exchange-page.bundle.js" "exchange-page.bundle.ie.min.js" "detail-modal-actions.bundle.min.js" "detail-modal-actions.bundle.js" "detail-modal-actions.bundle.ie.min.js" "common_menu.bundle.min.js" "common_menu.bundle.js" "common_menu.bundle.ie.min.js" "common.js" "common.bundle.min.js" "common.bundle.js~" "common.bundle.js" "common.bundle.ie.min.js" "card-page.bundle.min.js" "card-page.bundle.js" "card-page.bundle.ie.min.js" "calculator.js" "board.js" "admin/" ".DS_Store" "../" "./")
+
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/prebuilt-src/src/common/" (22305 49913 0 0) "utils/" "stores/" "getUserInfo.jsx~" "getUserInfo.jsx" "dispatcher/" "detail-modal-actions.js~" "detail-modal-actions.js" "constants/" "components/" "common_menu.js~" "common_menu.js" "common.scss~" "common.scss" "bundle.map.json" "actions/" "_mopic-glyphicon.scss~" "_mopic-glyphicon.scss" "_glyphicon.scss" "_glyph-template.scss" "_font.scss~" "_font.scss" "_bank-sprites.scss~" "_bank-sprites.scss" ".DS_Store" "#common_menu.js#" "../" "./")
+
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/prebuilt-src/" (22305 50757 0 0) "src/" "package.json~" "package.json" "node_modules/" "images/" "gulpfile.js~" "gulpfile.js" "fonts/" "eslint.config.json~" "eslint.config.json" "config.rb~" "config.rb" "bower.json~" "bower.json" ".sass-cache/" ".DS_Store" ".bowerrc" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/angular2-quickstart/app/" (22297 57089 0 0) "temp1.js.map" "temp1.js" "main.ts~" "main.ts" "main.js.map" "main.js" "app.component.ts~" "app.component.ts" "app.component.js.map" "app.component.js" "#main.ts#" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/angular2-quickstart/" (22297 57068 0 0) "typings.json~" "typings.json" "typings/" "tsconfig.json~" "tsconfig.json" "style.css~" "style.css" "package.json~" "package.json" "node_modules/" "index.html" "gulpfile.js~" "gulpfile.js" "app/" ".projectile~" ".projectile" ".git/" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/angular2-seed/" (22297 42198 0 0) "typings.json" "tsconfig.json" "package.json" ".git/" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/Angular-TypeScript/APM/app/products/" (22297 34420 0 0) "productListView.html" "productDetailView.html" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/Angular-TypeScript/APM/app/" (22297 34420 0 0) "products/" "common/" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/Angular-TypeScript/APM/" (22297 34420 0 0) "tsconfig.json" "styles/" "scripts/" "index.html" "clipboard.txt" "app/" ".settings/" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/Angular-TypeScript/" (22297 34420 0 0) "README.md" "LICENSE" "APM/" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/typescript-scratch/scripts/" (22296 37421 0 0) "typings/" "jquery.d.ts" "Car.ts~" "Car.ts" "Car.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/typescript-scratch/scripts/typings/" (22296 31089 0 0) "jquery.d.ts~" "jquery.d.ts" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/rauction-list-page/directives/" (22230 23196 0 0) "rfq-board/" "index.js~" "index.js" "../" "./")
+
+ ("/Users/sangwoo/.emacs.d/" (22296 23231 0 0) "tutorial/" "projectile.cache" "projectile-bookmarks.eld~" "projectile-bookmarks.eld" "node_emacs" "lisp/" "jade-mode/" "init.el~" "init.el" "ido.last~" "ido.last" "Cask~" "Cask" "auto-save-list/" "ac-comphist.dat" ".mc-lists.el" ".DS_Store" ".cask/" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/angular2-quickstart/node_modules/" (22294 56922 0 0) "zone.js/" "typings/" "typescript/" "systemjs/" "rxjs/" "reflect-metadata/" "lite-server/" "es6-shim/" "concurrently/" "angular2/" ".bin/" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/angular2-quickstart/node_modules/angular2/animate/" (22294 56944 0 0) "testing.js" "testing.d.ts" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/" (22296 18754 0 0) "virEnv/" "uwsgi_websocket.ini" "uwsgi_params" "uwsgi.ini" "templates/" "static/" "src/" "package.json" "node_modules/" "nginx.conf" "media/" "manage_production.py" "manage.py" "log/" "gulpfile.js~" "gulpfile.js" "eslint.config.json~" "eslint.config.json" "dump.rdb" "djcelery/" "config_backup/" "config.rb~" "config.rb" "bower.json" "bikepass_project/" "bikepass.req" ".vscode/" ".sass-cache/" ".projectile~" ".projectile" ".gitignore~" ".gitignore" ".git/" ".DS_Store" ".bowerrc" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/angular2-quickstart/node_modules/angular2/" (22294 56944 0 0) "web_worker/" "upgrade.js" "upgrade.d.ts" "typings/" "ts/" "testing_internal.js" "testing_internal.d.ts" "testing.js" "testing.d.ts" "src/" "router.metadata.json" "router.js" "router.d.ts" "router/" "README.md" "platform/" "package.json" "LICENSE" "instrumentation.js" "instrumentation.d.ts" "i18n.js" "i18n.d.ts" "http.metadata.json" "http.js" "http.d.ts" "http/" "examples/" "es6/" "core.js" "core.d.ts" "compiler.js" "compiler.d.ts" "common.js" "common.d.ts" "bundles/" "animate.js" "animate.d.ts" "animate/" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/angular2-quickstart/node_modules/angular2/src/core/" (22294 56943 0 0) "zone.js" "zone.d.ts" "zone/" "util.js" "util.d.ts" "util/" "testability/" "render.js" "render.d.ts" "render/" "reflection/" "profile/" "prod_mode.js" "prod_mode.d.ts" "platform_directives_and_pipes.js" "platform_directives_and_pipes.d.ts" "platform_common_providers.js" "platform_common_providers.d.ts" "pipes/" "metadata.metadata.json" "metadata.js" "metadata.d.ts" "metadata/" "linker.js" "linker.d.ts" "linker/" "di.js" "di.d.ts" "di/" "debug/" "console.metadata.json" "console.js" "console.d.ts" "change_detection.js" "change_detection.d.ts" "change_detection/" "application_tokens.js" "application_tokens.d.ts" "application_ref.js" "application_ref.d.ts" "application_common_providers.js" "application_common_providers.d.ts" "angular_entrypoint.metadata.json" "angular_entrypoint.js" "angular_entrypoint.d.ts" "../" "./")
+
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/prebuilt-src/src/common/components/" (22295 3327 0 0) "UserInfoAdder.jsx~" "UserInfoAdder.jsx" "TextInput.jsx~" "TextInput.jsx" "Subnav.jsx" "Spinner.jsx~" "Spinner.jsx" "SelectList.jsx~" "SelectList.jsx" "SelectDropdown.jsx~" "SelectDropdown.jsx" "RadioGroup.jsx~" "RadioGroup.jsx" "QuerySection.jsx~" "QuerySection.jsx" "PurchasedProduct.jsx~" "PurchasedProduct.jsx" "ProductCard.jsx~" "ProductCard.jsx" "MultiSelectDropdown.jsx~" "MultiSelectDropdown.jsx" "ComparisonSection.jsx~" "ComparisonSection.jsx" "ComparisonCard.jsx~" "ComparisonCard.jsx" "CheckboxGroup.jsx~" "CheckboxGroup.jsx" "CheckboxDropdown.jsx~" "CheckboxDropdown.jsx" ".DS_Store" ".#ProductCard.jsx" "#ProductCard.jsx#" "#ComparisonCard.jsx#" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/common/directives/drop-inject-to/" (22251 31019 0 0) "drop-inject-to.js~" "drop-inject-to.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/shop-detail-page/directives/" (22257 2297 0 0) "shop-image-slider/" "index.js~" "index.js" "holding-bike-slider/" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/shop-detail-page/services/" (22257 7482 0 0) "index.js~" "index.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/shop-detail-page/directives/holding-bike-slider/" (22259 20126 0 0) "holding-bike-slider.js~" "holding-bike-slider.js" "holding-bike-slider.html~" "holding-bike-slider.html" "#holding-bike-slider.js#" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/rauction-detail-page/services/" (22259 33383 0 0) "index.js~" "index.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/shop-detail-page/directives/shop-image-slider/" (22257 10143 0 0) "shop-image-slider.js~" "shop-image-slider.js" "shop-image-slider.html~" "shop-image-slider.html" "_shop-image-slider.scss~" "_shop-image-slider.scss" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/js-design-patterns/js/" (22288 32329 0 0) "strategy/" "pubsub/" "observer/" "mediator/" "main.js~" "main.js" "factory/" "cor/" ".DS_Store" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/js-design-patterns/js/mediator/" (22288 32607 0 0) "mediator.js~" "mediator.js" "init.js~" "init.js" "colleague.js~" "colleague.js" "../" "./")
+
+ ("/Users/sangwoo/dotfiles/" (22288 20651 0 0) "README.md" ".zshrc~" ".zshrc" ".screenrc" ".gitignore~" ".gitignore" ".git/" ".emacs.d/" ".DS_Store" ".bashrc_custom" ".bashrc" ".bash_profile" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/templates/general/" (22288 20265 0 0) "search.html~" "search.html" "scratch.html~" "scratch.html" "index.html~" "index.html" "bikeRegister.html~" "bikeDetail.html~" "bike-number-register.html~" "bike-number-register.html" "base.html~" "base.html" "#base.html#" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/js-design-patterns/" (22287 19889 0 0) "package.json" "js/" "init.js" "index.html~" "index.html" "bower_components/" "bower.json" ".gitignore" ".git/" ".DS_Store" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/js-design-patterns/js/pubsub/" (22287 15866 0 0) "pubsub.js~" "pubsub.js" "moduleB.js~" "moduleB.js" "moduleA.js~" "moduleA.js" "init.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/js-design-patterns/js/observer/" (22287 15629 0 0) "subject.js~" "subject.js" "observers.js~" "observers.js" "observer.js~" "observer.js" "init.js~" "init.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/js-design-patterns/js/strategy/" (22287 11491 0 0) "telValidator.js" "strategy.js~" "strategy.js" "init.js~" "init.js" "emailValidator.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/bike-register-page/directives/" (22238 54775 0 0) "index.js~" "index.js" "bike-form/" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/lib/bootstrap-sass/assets/stylesheets/" (22035 23647 0 0) "bootstrap/" "_bootstrap.scss" "_bootstrap-sprockets.scss" "_bootstrap-mincer.scss" "_bootstrap-custom.scss" "_bootstrap-compass.scss" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/rauction-create-page/directives/" (22243 40722 0 0) "index.js~" "index.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/prebuilt-src/src/" (22213 44701 0 0) "savings-page/" "p2p-page/" "my-page/" "main-page/" "loan-page/" "insure-page/" "exchange-page/" "common/" "card-page/" ".DS_Store" "../" "./")
+
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/prebuilt-src/src/common/stores/" (22273 53389 0 0) "QueryStore.js~" "QueryStore.js" "ProductStore.js~" "ProductStore.js" "ComparisonStore.js~" "ComparisonStore.js" "#ProductStore.js#" "../" "./")
+
+ ("/Users/sangwoo/workspace/sample-apps/js-design-patterns/js/factory/" (22287 4967 0 0) "video.js" "mediaFactory.js~" "mediaFactory.js" "init.js~" "init.js" "image.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/common/services/" (22283 32006 0 0) "wished-bike.js~" "wished-bike.js" "shop-notification.js~" "shop-notification.js" "shop-factory.js~" "shop-factory.js" "registered-bike.js~" "registered-bike.js" "register-service.js~" "register-service.js" "rauction-filter-value.js~" "rauction-filter-value.js" "quote.js~" "quote.js" "quote-request.js~" "quote-request.js" "query-parser-service.js~" "query-parser-service.js" "map-service.js~" "map-service.js" "holding-bike.js~" "holding-bike.js" "customer-notification.js~" "customer-notification.js" "#register-service.js#" "#rauction-filter-value.js#" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/templates/auction/" (22284 45473 0 0) "bikeRegister.html~" "bikeRegister.html" "bikeDetail.html~" "bikeDetail.html" "../" "./")
+
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/WEB-INF/" (22283 18909 0 0) "web.xml" "views/" "spring/" "lib/" "config/" "classes/" ".DS_Store" "../" "./")
+
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/WEB-INF/views/" (22283 18917 0 0) "savings-page/" "popupRedirect.jsp" "p2p-page/" "null.jsp" "my-page/" "methodTest.jsp" "mem/" "main-page/" "loginModal.jsp" "loan-page/" "insure-page/" "index.jsp" "include/" "home.jsp" "favicon.ico.jsp" "exchange-page/" "card-page/" "board/" "admin/" ".DS_Store" "../" "./")
+
+ ("/Users/sangwoo/workspace/eclipse/mopicPCWEB/src/main/webapp/WEB-INF/views/mem/" (22223 56639 0 0) "loginPage.jsp~" "loginPage.jsp" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/bike-register-page/directives/bike-form/" (22278 23023 0 0) "bike-form.js~" "bike-form.js" "bike-form-group.html" "bike-form-field.html~" "bike-form-field.html" "_bike-form.scss" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/" (22278 18786 0 0) "user-rfq-page/" "temp/" "shop-list-page/" "shop-detail-page/" "shop-create-page/" "search-page/" "scratch-page/" "sales-mgmt-page/" "rauction-list-page/" "rauction-detail-page/" "rauction-create-page/" "my-requests-page/" "main-page/" "config.js~" "config.js" "common/" "bike-register-page/" "bike-offer-page/" "bike-enroll-page/" "bike-detail-page/" "app.js~" "app.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/js/" (22278 23023 0 0) "ws4redis.js~" "ws4redis.js" "socket-user.js~" "socket-user.js" "shop-list-page.bundle.js" "shop-detail-page.bundle.js" "shop-create-page.bundle.js" "search-page.bundle.js" "scratch-page.bundle.js" "sales-mgmt-page.bundle.js" "rauction-list-page.bundle.js" "rauction-detail-page.bundle.js" "rauction-create-page.bundle.js" "my-requests-page.bundle.js" "modal.js~" "modal.js" "main-page.bundle.js" "global.bundle.js" "common.bundle.js" "buyerAddressSearch.js" "bike-register-page.bundle.js" "bike-detail-page.bundle.js" "addressSearch.js" "#socket-user.js#" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/common/utils/" (22278 8857 0 0) "queryParser.js~" "queryParser.js" "#getUrlQuery.js#" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/search-page/controllers/" (22278 6657 0 0) "search-controller.js~" "search-controller.js" "index.js~" "index.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/search-page/constants/" (22278 7870 0 0) "sort-options.js" "search-sort-options.js" "search-query-fields.js~" "search-query-fields.js" "query-fields.js~" "query-fields.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/common/directives/checkbox-list/" (22278 22841 0 0) "checkbox-list.js~" "checkbox-list.js" "checkbox-list.html~" "checkbox-list.html" "checkbox-list.css" "_checkbox-list.scss" "#checkbox-list.html#" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/main-page/controllers/" (22282 29965 0 0) "main-controller.js~" "main-controller.js" "index.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/rauction-create-page/services/" (22230 27518 0 0) "index.js~" "index.js" "brand-list-value.js" "address-service.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/rauction-create-page/" (22278 9373 0 0) "services/" "rauction-create-page.js~" "rauction-create-page.js" "filters/" "directives/" "controllers/" "constants/" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/rauction-create-page/controllers/" (22278 9285 0 0) "index.js" "auction-create-controller.js~" "auction-create-controller.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/bike-detail-page/controllers/" (22233 45066 0 0) "index.js" "bike-detail-controller.js~" "bike-detail-controller.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/temp/directives/" (22234 20688 0 0) "image-upload.js~" "image-upload.js" "image-preview.html" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/search-page/services/" (22278 3467 0 0) "index.js~" "index.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/rauction-list-page/services/" (22278 3561 0 0) "index.js~" "index.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/rauction-list-page/constants/" (22278 4501 0 0) "sort-options.js" "query-fields.js~" "query-fields.js" "../" "./")
+
+ ("/Users/sangwoo/workspace/bikepass_project/static/bikepass-app/rauction-list-page/" (22278 3699 0 0) "services/" "rauction-list-page.js~" "rauction-list-page.js" "filters/" "directives/" "controllers/" "constants/" "../" "./")
 )
 
 ;; ----- ido-unc-hosts-cache -----

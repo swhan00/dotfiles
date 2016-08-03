@@ -22,3 +22,4 @@
 (depends-on "js-comint")
 (depends-on "iedit")
 (depends-on "tide")
+(depends-on "neotree")

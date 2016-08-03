@@ -224,15 +224,4 @@ export LC_ALL=POSIX
 # ## ------------------------------
 
 # ## Define any user-specific variables you want here.
-# source ~/.bashrc_custom
-
-# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-
-# ## for GPU computing
-# export PATH=/usr/local/cuda-6.5/bin:$PATH
-# export LD_LIBRARY_PATH=/usr/local/cuda-6.5/lib64:$LD_LIBRARY_PATH
-
-# PATH=${CUDA_HOME}/bin:${PATH}
-# export PATH
-source /usr/local/opt/nvm/nvm.sh
+source ~/.bashrc_custom

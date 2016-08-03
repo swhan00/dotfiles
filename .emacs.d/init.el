@@ -17,11 +17,17 @@
 (require 'dired-x)
 (require 'compile)
 
+
+
 (require 'cask' "~/.cask/cask.el")
 (cask-initialize)
 ;;(require 'package) ;; melpa packages
 ;;(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 ;;(package-initialize)
+
+
+(require 'multiple-cursors)
+(require 'web-mode)
 
 
 (ac-config-default) ;; package: auto-complete
@@ -188,6 +194,7 @@
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)  ;; package-install -> ace-jump-mode
 (global-set-key (kbd "M-l") 'select-current-line) ;; defined in defun-config.el
 (global-set-key (kbd "C-S-y") 'duplicate-current-line-or-region) ;; defined in defun-config.el
+(global-set-key (kbd "C-S-e") 'eval-and-replace) ;; defined in defun-config.el
 
 ;; multiple-cursors
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
@@ -264,6 +271,10 @@
 
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
+
+;; to use 2.0+ ts compiler
+(setq tide-tsserver-executable "/usr/local/lib/node_modules/typescript/bin/tsserver")
+
 
 
 ;; Tide can be used along with web-mode to edit tsx files

@@ -4,16 +4,20 @@
 (setq mc/cmds-to-run-for-all
       '(
 		delete-word
+		downcase-region
 		duplicate-current-line-or-region
 		electric-newline-and-maybe-indent
+		eval-and-replace
 		indent-for-tab-command
 		indent-new-comment-line
+		indent-rigidly-right
 		js2-line-break
 		kill-region
 		next5
 		prev5
 		select-current-line
 		sgml-close-tag
+		sgml-delete-tag
 		sgml-skip-tag-forward
 		sgml-slash
 		upcase-region
@@ -22,8 +26,10 @@
 (setq mc/cmds-to-run-once
       '(
 		emmet-expand-line
+		helm-projectile
 		ido-find-file
 		ido-switch-buffer
 		iedit-mode
 		js2-mode-show-node
+		undo-tree-visualize
 		))

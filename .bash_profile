@@ -62,6 +62,10 @@ export PATH=$HOME/bin:$PATH
 export PATH=/usr/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
-export PATH=/usr/local/heroku/bin:$PATH # Heroku: https://toolbelt.heroku.com/standalone
+export PATH="$HOME/.cask/bin:$PATH"  # emacs cask
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"  # brew-installed python
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# virtualenv wrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/workspace/python
+source /usr/local/bin/virtualenvwrapper.sh

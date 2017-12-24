@@ -3,15 +3,17 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+		backward-sexp
+		comment-indent-new-line
 		delete-word
 		downcase-region
 		duplicate-current-line-or-region
-		electric-newline-and-maybe-indent
+		emmet-expand-line
 		eval-and-replace
+		forward-sexp
 		indent-for-tab-command
 		indent-new-comment-line
 		indent-rigidly-right
-		js2-line-break
 		kill-region
 		next5
 		prev5
@@ -21,11 +23,11 @@
 		sgml-skip-tag-forward
 		sgml-slash
 		upcase-region
+		web-mode-comment-indent-new-line
 		))
 
 (setq mc/cmds-to-run-once
       '(
-		emmet-expand-line
 		helm-projectile
 		ido-find-file
 		ido-switch-buffer

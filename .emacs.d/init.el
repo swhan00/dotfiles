@@ -14,7 +14,6 @@
 (require 'ansi-color)
 (require 'recentf)
 (require 'linum)
-(require 'smooth-scrolling)
 (require 'whitespace)
 (require 'dired-x)
 (require 'compile)
@@ -27,13 +26,13 @@
 ;; (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 ;; (package-initialize)
 
-
 (require 'multiple-cursors)
 (require 'web-mode)
 
 
 (ac-config-default) ;; package: auto-complete
 (global-undo-tree-mode 1) ;;package: undo-tree
+
 
 ;; disable vc-git
 (setq vc-handled-backends ())
@@ -42,6 +41,8 @@
 ;; set $PATH for shell
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 (setq exec-path (append exec-path '("/usr/local/bin")))
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
 
 
 ;; (menu-bar-mode -1)
@@ -62,7 +63,13 @@
 (setq ido-use-face nil)
 
 ;; projectile
-(projectile-global-mode)
+(projectile-mode)
+
+;; yasnippet
+(add-to-list 'load-path
+              "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
 
 
 
@@ -75,10 +82,11 @@
 
 
 
+
 ;; --------------------------
 ;; -- indentation settings --
 ;; --------------------------
-(setq-default tab-width 4)
+(setq-default tab-width 2)
 (electric-indent-mode 1)
 
 
@@ -91,7 +99,7 @@
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
-(setq default-buffer-file-coding-system 'utf-8)
+(setq buffer-file-coding-system 'utf-8)
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
 
@@ -121,6 +129,8 @@
    '(vertical-border ((t nil))))
 
   (set-face-foreground 'font-lock-comment-face "red")
+  (set-face-background 'default "unspecified-bg")
+  
   (global-set-key (kbd "C-c =") 'er/expand-region)
   (global-set-key (kbd "C-c i") 'iedit-mode)
   (global-set-key (kbd "C-c y") 'duplicate-current-line-or-region)
@@ -227,13 +237,22 @@
 			    ))
 
 
+(defun enable-minor-mode (my-pair)
+  "Enable minor mode if filename match the regexp.  MY-PAIR is a cons cell (regexp . minor-mode)."
+  (if (buffer-file-name)
+      (if (string-match (car my-pair) buffer-file-name)
+		  (funcall (cdr my-pair)))))
+
+(add-hook 'web-mode-hook #'(lambda ()
+                            (enable-minor-mode
+                             '("\\.jsx?\\'" . prettier-js-mode))))
+(add-hook 'js2-mode-hook 'prettier-js-mode)
+
 
 
 ;; ------------------------------
 ;; -- Typescript configuration --
 ;; ------------------------------
-
-
 (defun indent-or-complete ()
     (interactive)
     (if (looking-at "\\_>")
@@ -248,11 +267,11 @@
             (flycheck-mode +1)
             (setq flycheck-check-syntax-automatically '(save idle-change mode-enabled))
             (eldoc-mode +1)
-			(company-mode)
-			(setq company-minimum-prefix-length 2)
-			(setq company-idle-delay 0)
-			(setq company-dabbrev-downcase nil)
-			(local-set-key [tab] 'indent-or-complete)))
+						(company-mode)
+						(setq company-minimum-prefix-length 2)
+						(setq company-idle-delay 0)
+						(setq company-dabbrev-downcase nil)
+						(local-set-key [tab] 'indent-or-complete)))
 
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
@@ -263,7 +282,6 @@
 
 
 ;; Tide can be used along with web-mode to edit tsx files
-(require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 (add-hook 'web-mode-hook
           (lambda ()
@@ -272,16 +290,16 @@
               (flycheck-mode +1)
               (setq flycheck-check-syntax-automatically '(save idle-change mode-enabled))
               (eldoc-mode +1)
-			  (company-mode)
-			  (setq company-minimum-prefix-length 2)
-			  (setq company-idle-delay 0)
-			  (setq company-dabbrev-downcase nil)
-			  (local-set-key [tab] 'indent-or-complete))))
+							(company-mode)
+							(setq company-minimum-prefix-length 2)
+							(setq company-idle-delay 0)
+							(setq company-dabbrev-downcase nil)
+							(local-set-key [tab] 'indent-or-complete))))
 
 (add-hook
  'web-mode-hook
  '(lambda ()
-	(local-set-key "\M-j" 'comment-indent-new-line)))
+		(local-set-key "\M-j" 'comment-indent-new-line)))
 
 
 
@@ -376,6 +394,8 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 
+(setq web-mode-content-types-alist
+  '(("jsx" . "\\.js[x]?\\'")))
 
 (setq web-mode-engines-alist
       '(("php"    . "\\.phtml\\'")
@@ -384,14 +404,44 @@
 
 
 
-(setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'"))) ;; jsx mode on js files
+
+
+;; use local eslint from node_modules before global
+;; http://emacs.stackexchange.com/questions/21205/flycheck-with-file-relative-eslint-executable
+(defun my/use-eslint-from-node-modules ()
+  (let* ((root (locate-dominating-file
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (eslint (and root
+                      (expand-file-name "node_modules/eslint/bin/eslint.js"
+                                        root))))
+    (when (and eslint (file-executable-p eslint))
+      (setq-local flycheck-javascript-eslint-executable eslint))))
+(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
+
+
+
 
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
-  (setq web-mode-markup-indent-offset 4)
-  (setq web-mode-code-indent-offset 4)
+	(flycheck-mode +1)
+	(add-hook 'after-init-hook #'global-flycheck-mode)
+	
+	;; disable jshint since we prefer eslint checking
+	(setq-default flycheck-disabled-checkers
+								(append flycheck-disabled-checkers
+												'(javascript-jshint)))
+	
+	;; use eslint with web-mode for jsx files
+	(flycheck-add-mode 'javascript-eslint 'web-mode)
+	
+	;; adjust indents for web-mode to 2 spaces
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
   (setq web-mode-enable-auto-quoting nil))
+
 (add-hook 'web-mode-hook  'my-web-mode-hook)
+
 
 (defadvice web-mode-highlight-part (around tweak-jsx activate)
   (if (equal web-mode-content-type "jsx")
@@ -399,19 +449,24 @@
         ad-do-it)
     ad-do-it))
 
-;; (flycheck-define-checker jsxhint-checker
-;;   "A JSX syntax and style checker based on JSXHint."
 
-;;   :command ("jsxhint" source)
-;;   :error-patterns
-;;   ((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
-;;   :modes (web-mode))
-;; (add-hook 'web-mode-hook
-;;           (lambda ()
-;;             (when (equal web-mode-content-type "jsx")
-;;               ;; enable flycheck
-;;               (flycheck-select-checker 'jsxhint-checker)
-;;               (flycheck-mode))))
+
+
+
+
+
+
+
+;; ---------------------------------
+;; -- Solidity Mode configuration --
+;; ---------------------------------
+(require 'solidity-mode)
+(defun my-solidity-mode-hook ()
+  "Hooks for Web mode."
+  (setq tab-width 2)
+  (setq indent-tabs-mode t))
+(add-hook 'solidity-mode-hook  'my-solidity-mode-hook)
+
 
 
 

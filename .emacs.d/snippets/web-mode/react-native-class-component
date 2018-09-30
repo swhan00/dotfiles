@@ -1,0 +1,17 @@
+# key: rncc
+# name: react-native-class-component
+# --
+import React, { Component } from 'react';
+import { StyleSheet, View } from 'react-native';
+
+export default class ${0:`(file-name-base buffer-file-name)`} extends Component {
+  render() {
+    return (
+		  <View>$1</View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  
+});

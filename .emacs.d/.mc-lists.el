@@ -4,6 +4,8 @@
 (setq mc/cmds-to-run-for-all
       '(
 		backward-sexp
+		c-electric-delete-forward
+		c-electric-slash
 		comment-indent-new-line
 		delete-word
 		downcase-region

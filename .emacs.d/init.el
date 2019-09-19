@@ -309,7 +309,7 @@
 
 (elpy-enable)
 ;;(elpy-use-ipython)
-(elpy-use-ipython "ipython3") ;; Do 'M-x elpy-use-ipython' when python 2 used
+;;(elpy-use-ipython "ipython3") ;; Do 'M-x elpy-use-ipython' when python 2 used
 
 (setq elpy-rpc-backend "jedi")
 

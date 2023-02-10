@@ -225,3 +225,4 @@ export LC_ALL=POSIX
 
 # ## Define any user-specific variables you want here.
 source ~/.bashrc_custom
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

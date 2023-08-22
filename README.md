@@ -13,6 +13,18 @@ ln -s dotfiles/.bashrc_custom .
 mv .emacs.d .emacs.d~
 ln -s dotfiles/.emacs.d .
 ```
+In case of using `zsh`:
+
+```sh
+cd $HOME
+git clone https://github.com/startup-class/dotfiles.git
+ln -s dotfiles/.screenrc .
+ln -s dotfiles/.zprofile .
+ln -s dotfiles/.zshrc .
+ln -s dotfiles/.zshrc_custom .
+mv .emacs.d .emacs.d~
+ln -s dotfiles/.emacs.d .
+```
 
 See also http://github.com/startup-class/setup to install prerequisite
 programs. If all goes well, in addition to a more useful prompt, now you can

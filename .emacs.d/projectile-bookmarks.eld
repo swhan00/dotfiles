@@ -1,1 +1,0 @@
-("~/workspace/nail-jenpic/" "~/workspace/scraping/ppomppu-scraper/" "~/workspace/lucky_tr/" "~/dotfiles/.emacs.d/" "~/workspace/biz-districts/" "~/workspace/yeoido-bab/" "~/workspace/lucky7tron/" "~/workspace/dapp-slot/" "~/dotfiles/" "~/workspace/gjkitchen/")

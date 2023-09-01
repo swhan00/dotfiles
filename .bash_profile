@@ -69,3 +69,4 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"  # brew-installed python
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace/python
 source /usr/local/bin/virtualenvwrapper.sh
+. "$HOME/.cargo/env"

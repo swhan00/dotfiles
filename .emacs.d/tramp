@@ -1,0 +1,45 @@
+;; -*- emacs-lisp -*- <19/04/15 01:13:38 /Users/sangwoo/.emacs.d/tramp>
+;; Tramp connection history.  Don't change this file.
+;; You can delete it, forcing Tramp to reapply the checks.
+
+((["ssh" nil "trdev" nil nil]
+	("uname" "Linux 4.15.0-45-generic")
+	("locale" "LC_ALL=en_US.utf8")
+	("test" "test")
+	("remote-path"
+	 ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+	("remote-shell" "/bin/sh")
+	("~" "/home/luckyseven")
+	("file-exists" "test -e")
+	("perl-file-spec" t)
+	("perl-cwd-realpath" t)
+	("perl" "\\perl")
+	("readlink" "\\readlink")
+	("stat" nil)
+	("id" "/usr/bin/id")
+	("gid-integer" 1000)
+	("gid-string" "luckyseven")
+	("uid-integer" 1000)
+	("tmpdir" "/tmp")
+	("touch-t" t)
+	("touch" "\\touch"))
+ (["sudo" "root" "trdev" nil nil]
+	("uname" "Linux 4.15.0-45-generic")
+	("locale" "LC_ALL=en_US.utf8")
+	("test" "test")
+	("remote-path"
+	 ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+	("remote-shell" "/bin/sh")
+	("file-exists" "test -e")
+	("readlink" "\\readlink")
+	("stat" nil)
+	("perl-file-spec" t)
+	("perl-cwd-realpath" t)
+	("perl" "\\perl")
+	("id" "/usr/bin/id")
+	("gid-string" "root")
+	("gid-integer" 0)
+	("uid-integer" 0)
+	("tmpdir" "/tmp")
+	("touch-t" t)
+	("touch" "\\touch")))

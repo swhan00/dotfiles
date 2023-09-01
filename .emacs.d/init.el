@@ -1,13 +1,62 @@
 ;; -*- mode: emacs-lisp -*-
 ;; Simple .emacs configuration
 
+
+;; ----------------------
+;; -- Package Settings --
+;; ----------------------
+(require 'package)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")))
+(package-initialize)
+
+;; Refresh package contents if not already done
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(defvar my-packages
+  '(bind-key
+    company
+    auto-complete
+    expand-region
+    projectile
+    helm-projectile
+    undo-tree
+    emmet-mode
+    scss-mode
+    multiple-cursors
+    web-mode
+    json-mode
+    highlight-indent-guides
+    flx-ido
+    color-theme-sanityinc-tomorrow
+    ace-jump-mode
+    js2-mode
+    js-comint
+    iedit
+    tide
+    neotree
+    yasnippet
+    elpy
+    solidity-mode
+    prettier-js
+    flycheck
+    exec-path-from-shell
+    smooth-scroll
+    nginx-mode))
+
+(dolist (pkg my-packages)
+  (unless (package-installed-p pkg)
+    (package-install pkg)))
+
+
+
 ;; ---------------------
 ;; -- Global Settings --
 ;; ---------------------
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (setenv "LANG" "en_US.UTF-8")
 
-(require 'cl)
 (require 'ido)
 (require 'ffap)
 (require 'uniquify)
@@ -20,11 +69,9 @@
 
 
 
-(require 'cask "~/.cask/cask.el")
-(cask-initialize)
-;; (require 'package) ;; melpa packages
-;; (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-;; (package-initialize)
+;; (require 'cask "~/.cask/cask.el")
+;; (cask-initialize)
+
 
 (require 'multiple-cursors)
 (require 'web-mode)
@@ -226,6 +273,11 @@
 (setq inferior-js-program-command "node")
 (setq inferior-js-program-arguments '("--interactive"))
 
+(add-hook 'json-mode-hook
+          (lambda ()
+            (make-local-variable 'js-indent-level)
+            (setq js-indent-level 2)))
+
 
 (add-hook 'js2-mode-hook '(lambda ()
 			    (local-set-key "\C-x\C-e" 'js-send-last-sexp)			    
@@ -307,33 +359,39 @@
 ;; -- Python Mode configuration --
 ;; ------------------------------
 
+;; Enable Elpy
 (elpy-enable)
-;;(elpy-use-ipython)
-(elpy-use-ipython "ipython3") ;; Do 'M-x elpy-use-ipython' when python 2 used
 
+;; Use Jedi as the backend
 (setq elpy-rpc-backend "jedi")
 
+;; Use Flycheck instead of Flymake
 (when (require 'flycheck nil t)
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
   (add-hook 'elpy-mode-hook 'flycheck-mode))
 
+;; Python settings
 (defun python-settings-hook ()
-  (setq
-   python-shell-interpreter "ipython3"
-   python-shell-interpreter-args "--simple-prompt -i"
-   python-shell-prompt-regexp "In \\[[0-9]+\\]: "
-   python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
-   python-shell-completion-setup-code
-   "from IPython.core.completerlib import module_completion"
-   python-shell-completion-module-string-code
-   "';'.join(module_completion('''%s'''))\n"
-   python-shell-completion-string-code
-   "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
+  ;; Set ipython as the default interpreter
+  (setq python-shell-interpreter "ipython"
+        python-shell-interpreter-args "--simple-prompt -i"
+        python-shell-prompt-regexp "In \\[[0-9]+\\]: "
+        python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
+        ;; Remove deprecated completion settings
+        ;; python-shell-completion-setup-code
+        ;; "from IPython.core.completerlib import module_completion"
+        ;; python-shell-completion-module-string-code
+        ;; "';'.join(module_completion('''%s'''))\n"
+        ;; python-shell-completion-string-code
+        ;; "';'.join(get_ipython().Completer.all_completions('''%s'''))\n"
+        )
+  ;; Set indentation settings
   (setq tab-width 4)
   (setq python-indent 4)
   (setq indent-tabs-mode nil))
 
 (add-hook 'elpy-mode-hook 'python-settings-hook)
+
 
 
 
@@ -364,6 +422,7 @@
 ;; inline comment as default
 (add-hook 'scss-mode-hook
           (lambda ()
+						(setq tab-width 2)
             (set (make-local-variable 'comment-start) "//")
             (set (make-local-variable 'comment-end) "")))
 
@@ -452,6 +511,10 @@
 
 
 
+;; ---------------------------------
+;; -- Nginx Mode configuration --
+;; ---------------------------------
+(require 'nginx-mode)
 
 
 

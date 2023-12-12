@@ -19,6 +19,4 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH="$HOME/.cask/bin:$PATH"  # emacs cask
 
-# virtualenv wrapper
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+eval "$(/opt/homebrew/bin/brew shellenv)"

@@ -1,25 +1,5 @@
 # .zshrc file
 #
-# Concepts:
-#
-#    1) .zshrc is the *non-login* config for zsh, run in scripts and after
-#        first connection.
-#    2) .zprofile is the *login* config for zsh, launched upon first connection.
-#    3) .zprofile imports .zshrc, but not vice versa.
-#    4) .zshrc imports .zshrc_custom, which can be used to override
-#        variables specified here.
-#           
-# When using GNU screen:
-#
-#    1) .zprofile is loaded the first time you login, and should be used
-#       only for paths and environmental settings
-
-#    2) .zshrc is loaded in each subsequent screen, and should be used for
-#       aliases and things like writing to .bash_eternal_history (see below)
-#
-# For more information, see here:
-# http://en.wikipedia.org/wiki/Bash#Startup_scripts
-#
 # When zsh starts, it executes the commands in a variety of different scripts.
 #
 #  1) It first reads and executes commands from the file /etc/zshenv, 
@@ -123,18 +103,8 @@ export LC_ALL=POSIX
 
 # 2.6) Install rlwrap if not present
 # http://stackoverflow.com/a/677212
-#command -v rlwrap >/dev/null 2>&1 || { echo >&2 "Install rlwrap to use node: sudo apt-get install -y rlwrap";}
+# command -v rlwrap >/dev/null 2>&1 || { echo >&2 "Install rlwrap to use node: sudo apt-get install -y rlwrap";}
 
-# 2.7) node.js and nvm
-# http://nodejs.org/api/repl.html#repl_repl
-# alias node="env NODE_NO_READLINE=1 rlwrap node"
-# alias node_repl="node -e \"require('repl').start({ignoreUndefined: true})\""
-# export NODE_DISABLE_COLORS=1
-# if [ -s ~/.nvm/nvm.sh ]; then
-#     NVM_DIR=~/.nvm
-#     source ~/.nvm/nvm.sh
-#     nvm use v0.10.12 &> /dev/null # silence nvm use; needed for rsync
-# fi
 
 # ## ------------------------------
 # ## -- 3) User-customized code  --
@@ -142,10 +112,3 @@ export LC_ALL=POSIX
 
 # ## Define any user-specific variables you want here.
 source ~/.zshrc_custom
-
-export PATH="$(brew --prefix)/opt/python@3.11/libexec/bin:$PATH"
-
-. "$HOME/.cargo/env"
-
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"

@@ -1,7 +1,7 @@
-## -----------------------
-## -- 1) Import .bashrc --
-## -----------------------
+# Description: This file is loaded before the shell starts in login mode.
+#              This file is loaded before .zshrc.
 
+# Configure Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 

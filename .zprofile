@@ -2,7 +2,14 @@
 #              This file is loaded before .zshrc.
 
 # Configure Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+#   Check the architecture of the machine using `uname -m`
+if [[ $(uname -m) == "arm64" ]]; then
+    # Apple Silicon (ARM)
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    # Intel
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
 
 
 # Configure PATH

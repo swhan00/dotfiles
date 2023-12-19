@@ -8,6 +8,7 @@ cd $HOME
 git clone git@github.com:swhan00/dotfiles.git
 cd dotfiles
 git checkout macbook
+cd $HOME
 ln -s dotfiles/.zprofile .
 ln -s dotfiles/.zshrc .
 ln -s dotfiles/.zshrc_custom .

@@ -1,13 +1,16 @@
-## -----------------------
-## -- 1) Import .bashrc --
-## -----------------------
+# Description: This file is loaded before the shell starts in login mode.
+#              This file is loaded before .zshrc.
 
-# Factor out all repeated profile initialization into .zshrc
-#  - All non-login shell parameters go there
-#  - All declarations repeated for each screen session go there
-if [ -f ~/.bashrc ]; then
-   source ~/.zshrc
+# Configure Homebrew
+#   Check the architecture of the machine using `uname -m`
+if [[ $(uname -m) == "arm64" ]]; then
+    # Apple Silicon (ARM)
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    # Intel
+    eval "$(/usr/local/bin/brew shellenv)"
 fi
+
 
 # Configure PATH
 #  - These are line by line so that you can kill one without affecting the others.
@@ -17,6 +20,3 @@ export PATH=$HOME/bin:$PATH
 export PATH=/usr/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
-export PATH="$HOME/.cask/bin:$PATH"  # emacs cask
-
-eval "$(/opt/homebrew/bin/brew shellenv)"

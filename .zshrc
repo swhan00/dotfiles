@@ -1,25 +1,5 @@
 # .zshrc file
 #
-# Concepts:
-#
-#    1) .zshrc is the *non-login* config for zsh, run in scripts and after
-#        first connection.
-#    2) .zprofile is the *login* config for zsh, launched upon first connection.
-#    3) .zprofile imports .zshrc, but not vice versa.
-#    4) .zshrc imports .zshrc_custom, which can be used to override
-#        variables specified here.
-#           
-# When using GNU screen:
-#
-#    1) .zprofile is loaded the first time you login, and should be used
-#       only for paths and environmental settings
-
-#    2) .zshrc is loaded in each subsequent screen, and should be used for
-#       aliases and things like writing to .bash_eternal_history (see below)
-#
-# For more information, see here:
-# http://en.wikipedia.org/wiki/Bash#Startup_scripts
-#
 # When zsh starts, it executes the commands in a variety of different scripts.
 #
 #  1) It first reads and executes commands from the file /etc/zshenv, 
@@ -78,7 +58,7 @@ fi
 
 
 # Make prompt informative
-PS1="%F{blue}[%n@%m:%~]$%f "
+PS1="%F{blue}[%n@%m:%~]$%f"
 
 
 ## -----------------------
@@ -121,6 +101,10 @@ export GREP_COLOR='1;31' # green for matches
 unset LANG
 export LC_ALL=POSIX
 
+# 2.6) Install rlwrap if not present
+# http://stackoverflow.com/a/677212
+# command -v rlwrap >/dev/null 2>&1 || { echo >&2 "Install rlwrap to use node: sudo apt-get install -y rlwrap";}
+
 
 # ## ------------------------------
 # ## -- 3) User-customized code  --
@@ -128,8 +112,3 @@ export LC_ALL=POSIX
 
 # ## Define any user-specific variables you want here.
 source ~/.zshrc_custom
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion

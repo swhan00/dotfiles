@@ -58,7 +58,7 @@ fi
 
 
 # Make prompt informative
-PS1="%F{blue}[%n@%m:%~]$%f "
+PS1="%F{blue}[%n@%m:%~]$%f"
 
 
 ## -----------------------

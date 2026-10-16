@@ -38,5 +38,16 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 [[ -d $HOME/.antigravity/antigravity/bin ]] && export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 
+# AI Gateway usage
+export AI_GATEWAY_API_KEY="$(security find-generic-password -a "$USER" -s ai-gateway-api-key -w 2>/dev/null)"
+
+export ANTHROPIC_BASE_URL="https://ai-gateway.corp.nwz.cloud"
+export ANTHROPIC_AUTH_TOKEN="$AI_GATEWAY_API_KEY"
+
+
+export OPENAI_BASE_URL="https://ai-gateway.corp.nwz.cloud"
+export OPENAI_API_KEY="$AI_GATEWAY_API_KEY"
+
+
 # Machine-local settings (not in git)
 [[ -f ~/.zshrc_local ]] && source ~/.zshrc_local

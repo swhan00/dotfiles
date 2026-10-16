@@ -5,20 +5,10 @@ configure your `bash` and `emacs` development environment as follows:
 
 ```sh
 cd $HOME
-git clone https://github.com/startup-class/dotfiles.git
-ln -s dotfiles/.screenrc .
-ln -s dotfiles/.bash_profile .
-ln -s dotfiles/.bashrc .
-ln -s dotfiles/.bashrc_custom .
-mv .emacs.d .emacs.d~
-ln -s dotfiles/.emacs.d .
-```
-In case of using `zsh`:
-
-```sh
+git clone git@github.com:swhan00/dotfiles.git
+cd dotfiles
+git checkout macbook
 cd $HOME
-git clone https://github.com/startup-class/dotfiles.git
-ln -s dotfiles/.screenrc .
 ln -s dotfiles/.zprofile .
 ln -s dotfiles/.zshrc .
 ln -s dotfiles/.zshrc_custom .

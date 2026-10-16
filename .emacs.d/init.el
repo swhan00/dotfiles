@@ -1,13 +1,64 @@
 ;; -*- mode: emacs-lisp -*-
 ;; Simple .emacs configuration
 
+
+;; ----------------------
+;; -- Package Settings --
+;; ----------------------
+(require 'package)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")))
+(package-initialize)
+
+;; Refresh package contents if not already done
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(defvar my-packages
+  '(bind-key
+    company
+    auto-complete
+    expand-region
+    projectile
+    helm-projectile
+    undo-tree
+    emmet-mode
+    scss-mode
+    multiple-cursors
+    web-mode
+    json-mode
+    highlight-indent-guides
+    flx-ido
+    color-theme-sanityinc-tomorrow
+    ace-jump-mode
+    js2-mode
+    js-comint
+    iedit
+    tide
+    neotree
+    yasnippet
+    elpy
+    solidity-mode
+    prettier-js
+    flycheck
+    exec-path-from-shell
+    smooth-scroll
+    nginx-mode))
+
+(dolist (pkg my-packages)
+  (unless (package-installed-p pkg)
+    (package-install pkg)))
+
+
+
 ;; ---------------------
 ;; -- Global Settings --
 ;; ---------------------
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (setenv "LANG" "en_US.UTF-8")
 
-(require 'cl)
+(setq backup-directory-alist '((".*" . "~/.Trash/emacs-backup")))
+
 (require 'ido)
 (require 'ffap)
 (require 'uniquify)
@@ -20,11 +71,9 @@
 
 
 
-(require 'cask "~/.cask/cask.el")
-(cask-initialize)
-;; (require 'package) ;; melpa packages
-;; (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-;; (package-initialize)
+;; (require 'cask "~/.cask/cask.el")
+;; (cask-initialize)
+
 
 (require 'multiple-cursors)
 (require 'web-mode)
@@ -226,6 +275,11 @@
 (setq inferior-js-program-command "node")
 (setq inferior-js-program-arguments '("--interactive"))
 
+(add-hook 'json-mode-hook
+          (lambda ()
+            (make-local-variable 'js-indent-level)
+            (setq js-indent-level 2)))
+
 
 (add-hook 'js2-mode-hook '(lambda ()
 			    (local-set-key "\C-x\C-e" 'js-send-last-sexp)			    
@@ -307,33 +361,39 @@
 ;; -- Python Mode configuration --
 ;; ------------------------------
 
+;; Enable Elpy
 (elpy-enable)
-;;(elpy-use-ipython)
-;;(elpy-use-ipython "ipython3") ;; Do 'M-x elpy-use-ipython' when python 2 used
 
+;; Use Jedi as the backend
 (setq elpy-rpc-backend "jedi")
 
+;; Use Flycheck instead of Flymake
 (when (require 'flycheck nil t)
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
   (add-hook 'elpy-mode-hook 'flycheck-mode))
 
+;; Python settings
 (defun python-settings-hook ()
-  (setq
-   python-shell-interpreter "ipython3"
-   python-shell-interpreter-args "--simple-prompt -i"
-   python-shell-prompt-regexp "In \\[[0-9]+\\]: "
-   python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
-   python-shell-completion-setup-code
-   "from IPython.core.completerlib import module_completion"
-   python-shell-completion-module-string-code
-   "';'.join(module_completion('''%s'''))\n"
-   python-shell-completion-string-code
-   "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
+  ;; Set ipython as the default interpreter
+  (setq python-shell-interpreter "ipython"
+        python-shell-interpreter-args "--simple-prompt -i"
+        python-shell-prompt-regexp "In \\[[0-9]+\\]: "
+        python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
+        ;; Remove deprecated completion settings
+        ;; python-shell-completion-setup-code
+        ;; "from IPython.core.completerlib import module_completion"
+        ;; python-shell-completion-module-string-code
+        ;; "';'.join(module_completion('''%s'''))\n"
+        ;; python-shell-completion-string-code
+        ;; "';'.join(get_ipython().Completer.all_completions('''%s'''))\n"
+        )
+  ;; Set indentation settings
   (setq tab-width 4)
   (setq python-indent 4)
   (setq indent-tabs-mode nil))
 
 (add-hook 'elpy-mode-hook 'python-settings-hook)
+
 
 
 
@@ -364,6 +424,7 @@
 ;; inline comment as default
 (add-hook 'scss-mode-hook
           (lambda ()
+						(setq tab-width 2)
             (set (make-local-variable 'comment-start) "//")
             (set (make-local-variable 'comment-end) "")))
 
@@ -452,6 +513,10 @@
 
 
 
+;; ---------------------------------
+;; -- Nginx Mode configuration --
+;; ---------------------------------
+(require 'nginx-mode)
 
 
 
@@ -476,42 +541,51 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
-   [default bold shadow italic underline bold bold-italic bold])
+	 [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
-   (vector "#cccccc" "#f2777a" "#99cc99" "#ffcc66" "#6699cc" "#cc99cc" "#66cccc" "#2d2d2d"))
- '(custom-enabled-themes (quote (sanityinc-tomorrow-bright)))
+	 (vector "#cccccc" "#f2777a" "#99cc99" "#ffcc66" "#6699cc" "#cc99cc" "#66cccc" "#2d2d2d"))
+ '(custom-enabled-themes '(sanityinc-tomorrow-bright))
  '(custom-safe-themes
-   (quote
-	("1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
+	 '("1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default))
  '(fci-rule-color "#515151")
  '(package-selected-packages
-   (quote
-	(web-mode undo-tree tide scss-mode neotree multiple-cursors js2-mode js-comint iedit highlight-indent-guides helm-projectile flx-ido expand-region emmet-mode company color-theme-sanityinc-tomorrow cask bind-key auto-complete ace-jump-mode)))
+	 '(web-mode undo-tree tide scss-mode neotree multiple-cursors js2-mode js-comint iedit highlight-indent-guides helm-projectile flx-ido expand-region emmet-mode company color-theme-sanityinc-tomorrow cask bind-key auto-complete ace-jump-mode))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
-   (quote
-	((20 . "#f2777a")
-	 (40 . "#f99157")
-	 (60 . "#ffcc66")
-	 (80 . "#99cc99")
-	 (100 . "#66cccc")
-	 (120 . "#6699cc")
-	 (140 . "#cc99cc")
-	 (160 . "#f2777a")
-	 (180 . "#f99157")
-	 (200 . "#ffcc66")
-	 (220 . "#99cc99")
-	 (240 . "#66cccc")
-	 (260 . "#6699cc")
-	 (280 . "#cc99cc")
-	 (300 . "#f2777a")
-	 (320 . "#f99157")
-	 (340 . "#ffcc66")
-	 (360 . "#99cc99"))))
+	 '((20 . "#f2777a")
+		 (40 . "#f99157")
+		 (60 . "#ffcc66")
+		 (80 . "#99cc99")
+		 (100 . "#66cccc")
+		 (120 . "#6699cc")
+		 (140 . "#cc99cc")
+		 (160 . "#f2777a")
+		 (180 . "#f99157")
+		 (200 . "#ffcc66")
+		 (220 . "#99cc99")
+		 (240 . "#66cccc")
+		 (260 . "#6699cc")
+		 (280 . "#cc99cc")
+		 (300 . "#f2777a")
+		 (320 . "#f99157")
+		 (340 . "#ffcc66")
+		 (360 . "#99cc99")))
  '(vc-annotate-very-old-color nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:inherit autoface-default :strike-through nil :underline nil :slant normal :weight normal :height 120 :width normal :family "monaco"))))
+ '(column-marker-1 ((t (:background "red"))) t)
+ '(diff-added ((t (:foreground "cyan"))))
+ '(flymake-error ((((class color) (background light)) (:background "Red"))))
+ '(font-lock-comment-face ((((class color) (min-colors 8) (background light)) (:foreground "red"))))
+ '(fundamental-mode-default ((t (:inherit default))) t)
+ '(highlight ((((class color) (min-colors 8)) (:background "white" :foreground "magenta"))))
+ '(isearch ((((class color) (min-colors 8)) (:background "yellow" :foreground "black"))))
+ '(linum ((t (:foreground "black" :weight bold))))
+ '(region ((((class color) (min-colors 8)) (:background "white" :foreground "magenta"))))
+ '(secondary-selection ((((class color) (min-colors 8)) (:background "gray" :foreground "cyan"))))
+ '(show-paren-match ((((class color) (background light)) (:background "black"))))
+ '(vertical-border ((t nil))))

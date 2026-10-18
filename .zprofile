@@ -1,21 +1,17 @@
-# Description: This file is loaded before the shell starts in login mode.
-#              This file is loaded before .zshrc.
+# Login-shell environment; loaded before .zshrc.
 
-# Configure Homebrew
-#   Check the architecture of the machine using `uname -m`
-if [[ $(uname -m) == "arm64" ]]; then
-    # Apple Silicon (ARM)
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-else
-    # Intel
-    eval "$(/usr/local/bin/brew shellenv)"
+# Keep the first occurrence of each PATH entry, including in nested shells.
+typeset -U path PATH
+for dotfiles_bin in "$HOME/bin" /usr/local/bin /usr/local/sbin; do
+  if [[ -d "$dotfiles_bin" ]]; then
+    path=("$dotfiles_bin" "${path[@]}")
+  fi
+done
+unset dotfiles_bin
+
+# Let the native Homebrew installation take precedence over system binaries.
+if [[ $(uname -m) == arm64 && -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ -x /usr/local/bin/brew ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
 fi
-
-
-# Configure PATH
-#  - These are line by line so that you can kill one without affecting the others.
-#  - Lowest priority first, highest priority last.
-export PATH=$PATH
-export PATH=$HOME/bin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH

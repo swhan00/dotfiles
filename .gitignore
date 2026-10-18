@@ -3,3 +3,5 @@
 *~
 .emacs.d/.cask
 .emacs.d/elpa
+.DS_Store
+.zshrc_local

@@ -95,20 +95,11 @@ export VISUAL='emacs -nw'
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;31' # green for matches
 
-# 2.5) sort options
-# Ensures cross-platform sorting behavior of GNU sort.
-# http://www.gnu.org/software/coreutils/faq/coreutils-faq.html#Sort-does-not-sort-in-normal-order_0021
-unset LANG
-export LC_ALL=POSIX
-
-# 2.6) Install rlwrap if not present
-# http://stackoverflow.com/a/677212
-# command -v rlwrap >/dev/null 2>&1 || { echo >&2 "Install rlwrap to use node: sudo apt-get install -y rlwrap";}
-
-
 # ## ------------------------------
 # ## -- 3) User-customized code  --
 # ## ------------------------------
 
-# ## Define any user-specific variables you want here.
-source ~/.zshrc_custom
+# Keep personal environment and tool configuration in .zshrc_custom.
+if [[ -r "$HOME/.zshrc_custom" ]]; then
+  source "$HOME/.zshrc_custom"
+fi

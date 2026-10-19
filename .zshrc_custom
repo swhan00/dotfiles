@@ -1,53 +1,60 @@
-# Locale
-export LC_ALL=ko_KR.UTF-8
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
+# Locale: LANG supplies the default without forcing every LC_* category.
+export LANG=ko_KR.UTF-8
+unset LC_ALL LANGUAGE
 
+# Use zsh's tied PATH array and keep the first occurrence of each entry.
+typeset -U path PATH
 
-# Homebrew
-HOMEBREW_PREFIX="${HOMEBREW_PREFIX:-/opt/homebrew}"
-
-
-# Python
-if [[ -d $HOMEBREW_PREFIX/opt/python@3.11/libexec/bin ]]; then
-  export PATH="$HOMEBREW_PREFIX/opt/python@3.11/libexec/bin:$PATH"
+# Python: pyenv manages interpreters; pyenv-virtualenv manages environments.
+export PYENV_ROOT="${PYENV_ROOT:-$HOME/.pyenv}"
+if [[ -d "$PYENV_ROOT/bin" ]]; then
+  path=("$PYENV_ROOT/bin" "${path[@]}")
 fi
-export WORKON_HOME=$HOME/.virtualenvs
-[[ -f $HOMEBREW_PREFIX/bin/virtualenvwrapper.sh ]] && source $HOMEBREW_PREFIX/bin/virtualenvwrapper.sh
-
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv >/dev/null; then
-  eval "$(pyenv init -)"
-  export CLOUDSDK_PYTHON="$(pyenv which python 2>/dev/null)"
+if [[ -o interactive ]] && command -v pyenv >/dev/null 2>&1; then
+  eval "$(pyenv init - zsh)"
+  if pyenv commands | command grep -qx virtualenv-init; then
+    eval "$(pyenv virtualenv-init -)"
+  fi
+  if dotfiles_python="$(pyenv which python 2>/dev/null)"; then
+    export CLOUDSDK_PYTHON="$dotfiles_python"
+  fi
+  unset dotfiles_python
 fi
-
 
 # Node.js
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
+if [[ -o interactive && -s "$NVM_DIR/nvm.sh" ]]; then
+  source "$NVM_DIR/nvm.sh"
+  if [[ -s "$NVM_DIR/bash_completion" ]]; then
+    source "$NVM_DIR/bash_completion"
+  fi
+fi
 
 # Android SDK
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-[[ -d $ANDROID_HOME ]] && export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
-
+export ANDROID_HOME="${ANDROID_HOME:-$HOME/Library/Android/sdk}"
+for dotfiles_bin in "$ANDROID_HOME/emulator" "$ANDROID_HOME/platform-tools"; do
+  if [[ -d "$dotfiles_bin" ]]; then
+    path=("$dotfiles_bin" "${path[@]}")
+  fi
+done
+unset dotfiles_bin
 
 # Antigravity
-[[ -d $HOME/.antigravity/antigravity/bin ]] && export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+if [[ -d "$HOME/.antigravity/antigravity/bin" ]]; then
+  path=("$HOME/.antigravity/antigravity/bin" "${path[@]}")
+fi
 
+# LM Studio CLI (lower priority than existing commands)
+if [[ -d "$HOME/.lmstudio/bin" ]]; then
+  path+=("$HOME/.lmstudio/bin")
+fi
 
-# AI Gateway usage
-export AI_GATEWAY_API_KEY="$(security find-generic-password -a "$USER" -s ai-gateway-api-key -w 2>/dev/null)"
+# MuseScore
+if [[ -x "/Applications/MuseScore 4.app/Contents/MacOS/mscore" ]]; then
+  export MUSESCORE_PATH="/Applications/MuseScore 4.app/Contents/MacOS/mscore"
+fi
 
-export ANTHROPIC_BASE_URL="https://ai-gateway.corp.nwz.cloud"
-export ANTHROPIC_AUTH_TOKEN="$AI_GATEWAY_API_KEY"
-
-
-export OPENAI_BASE_URL="https://ai-gateway.corp.nwz.cloud"
-export OPENAI_API_KEY="$AI_GATEWAY_API_KEY"
-
-
-# Machine-local settings (not in git)
-[[ -f ~/.zshrc_local ]] && source ~/.zshrc_local
+# Machine-local settings, including credentials, stay outside version control.
+if [[ -r "$HOME/.zshrc_local" ]]; then
+  source "$HOME/.zshrc_local"
+fi
